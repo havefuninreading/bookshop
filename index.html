@@ -1,1048 +1,1047 @@
-<h1>&lt;!DOCTYPE html&gt;
-  <br>&lt;html lang="zh-Hant"&gt;
-  <br>&lt;head&gt;
-  <br>&lt;meta charset="UTF-8"&gt;
-  <br>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-  <br>&lt;title&gt;書籍內文介紹 | 書單分類目錄&lt;/title&gt;
-  <br>&lt;meta name="description" content="依分類整理的英文繪本、讀本與章節書內文介紹目錄。"&gt;
-  <br>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
-  <br>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
-  <br>&lt;link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Noto+Sans+TC:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;
-  <br>&lt;style&gt;
-  <br>:root {
-  <br>--bg-page: #faf7f2;
-  <br>--bg-surface: #ffffff;
-  <br>--bg-subtle: #f3ede2;
-  <br>--bg-hover: #f7f2e9;
-  <br>--text-primary: #1f2421;
-  <br>--text-secondary: #5a625d;
-  <br>--text-muted: #878e88;
-  <br>--accent-primary: #b8522a;
-  <br>--accent-primary-hover: #963f1d;
-  <br>--accent-soft: #fbeee8;
-  <br>--accent-teal: #2b6758;
-  <br>--accent-teal-soft: #e6f2ee;
-  <br>--border-subtle: #e5dec9;
-  <br>--border-strong: #d2c8b0;
-  <br>--shadow-sm: 0 1px 3px rgba(31, 36, 33, 0.05), 0 1px 2px rgba(31, 36, 33, 0.03);
-  <br>--shadow-md: 0 6px 18px rgba(31, 36, 33, 0.07), 0 2px 6px rgba(31, 36, 33, 0.04);
-  <br>--radius-sm: 8px;
-  <br>--radius-md: 12px;
-  <br>--radius-lg: 16px;
-  <br>--font-sans: "Noto Sans TC", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  <br>--font-serif: "Newsreader", "Noto Serif TC", Georgia, serif;
-  <br>}
-  <br>
-  <br>* {
-  <br>box-sizing: border-box;
-  <br>margin: 0;
-  <br>padding: 0;
-  <br>}
-  <br>
-  <br>html {
-  <br>scroll-behavior: smooth;
-  <br>}
-  <br>
-  <br>body {
-  <br>font-family: var(--font-sans);
-  <br>background-color: var(--bg-page);
-  <br>color: var(--text-primary);
-  <br>line-height: 1.6;
-  <br>-webkit-font-smoothing: antialiased;
-  <br>min-height: 100vh;
-  <br>}
-  <br>
-  <br>/* Controls Bar */
-  <br>.controls-wrapper {
-  <br>position: sticky;
-  <br>top: 0;
-  <br>z-index: 20;
-  <br>background-color: rgba(250, 247, 242, 0.92);
-  <br>backdrop-filter: blur(10px);
-  <br>border-bottom: 1px solid var(--border-subtle);
-  <br>padding: 0.9rem 1.5rem;
-  <br>}
-  <br>
-  <br>.controls-inner {
-  <br>max-width: 1120px;
-  <br>margin: 0 auto;
-  <br>display: flex;
-  <br>flex-direction: column;
-  <br>gap: 0.85rem;
-  <br>}
-  <br>
-  <br>.search-row {
-  <br>display: flex;
-  <br>flex-wrap: wrap;
-  <br>align-items: center;
-  <br>justify-content: space-between;
-  <br>gap: 0.85rem;
-  <br>}
-  <br>
-  <br>.search-box {
-  <br>position: relative;
-  <br>flex: 1 1 280px;
-  <br>max-width: 460px;
-  <br>}
-  <br>
-  <br>.search-icon {
-  <br>position: absolute;
-  <br>left: 0.85rem;
-  <br>top: 50%;
-  <br>transform: translateY(-50%);
-  <br>width: 17px;
-  <br>height: 17px;
-  <br>color: var(--text-muted);
-  <br>pointer-events: none;
-  <br>}
-  <br>
-  <br>.search-input {
-  <br>width: 100%;
-  <br>padding: 0.6rem 2.2rem 0.6rem 2.5rem;
-  <br>font-size: 0.92rem;
-  <br>font-family: inherit;
-  <br>color: var(--text-primary);
-  <br>background-color: var(--bg-surface);
-  <br>border: 1px solid var(--border-strong);
-  <br>border-radius: var(--radius-sm);
-  <br>outline: none;
-  <br>transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  <br>}
-  <br>
-  <br>.search-input:focus {
-  <br>border-color: var(--accent-primary);
-  <br>box-shadow: 0 0 0 3px rgba(184, 82, 42, 0.14);
-  <br>}
-  <br>
-  <br>.clear-search-btn {
-  <br>position: absolute;
-  <br>right: 0.55rem;
-  <br>top: 50%;
-  <br>transform: translateY(-50%);
-  <br>border: none;
-  <br>background: transparent;
-  <br>color: var(--text-muted);
-  <br>cursor: pointer;
-  <br>padding: 0.2rem;
-  <br>display: none;
-  <br>line-height: 1;
-  <br>font-size: 1.1rem;
-  <br>}
-  <br>
-  <br>.clear-search-btn.visible {
-  <br>display: block;
-  <br>}
-  <br>
-  <br>.filter-meta-group {
-  <br>display: flex;
-  <br>align-items: center;
-  <br>gap: 1.1rem;
-  <br>flex-wrap: wrap;
-  <br>}
-  <br>
-  <br>.toggle-label {
-  <br>display: inline-flex;
-  <br>align-items: center;
-  <br>gap: 0.5rem;
-  <br>font-size: 0.88rem;
-  <br>color: var(--text-secondary);
-  <br>cursor: pointer;
-  <br>user-select: none;
-  <br>}
-  <br>
-  <br>.toggle-checkbox {
-  <br>width: 16px;
-  <br>height: 16px;
-  <br>accent-color: var(--accent-primary);
-  <br>cursor: pointer;
-  <br>}
-  <br>
-  <br>.stats-summary {
-  <br>font-size: 0.85rem;
-  <br>color: var(--text-secondary);
-  <br>background-color: var(--bg-subtle);
-  <br>padding: 0.3rem 0.7rem;
-  <br>border-radius: 999px;
-  <br>}
-  <br>
-  <br>/* Category Tabs */
-  <br>.category-nav {
-  <br>display: flex;
-  <br>flex-direction: column;
-  <br>gap: 0.5rem;
-  <br>}
-  <br>
-  <br>.category-nav-row {
-  <br>display: flex;
-  <br>flex-wrap: wrap;
-  <br>align-items: center;
-  <br>gap: 0.5rem;
-  <br>}
-  <br>
-  <br>.category-tab {
-  <br>display: inline-flex;
-  <br>align-items: center;
-  <br>gap: 0.4rem;
-  <br>padding: 0.42rem 0.85rem;
-  <br>font-size: 0.86rem;
-  <br>font-weight: 500;
-  <br>font-family: inherit;
-  <br>white-space: nowrap;
-  <br>border-radius: 999px;
-  <br>border: 1px solid var(--border-subtle);
-  <br>background-color: var(--bg-surface);
-  <br>color: var(--text-secondary);
-  <br>cursor: pointer;
-  <br>transition: all 0.15s ease;
-  <br>}
-  <br>
-  <br>.category-tab:hover {
-  <br>border-color: var(--border-strong);
-  <br>color: var(--text-primary);
-  <br>background-color: var(--bg-hover);
-  <br>}
-  <br>
-  <br>.category-tab.active {
-  <br>background-color: var(--text-primary);
-  <br>border-color: var(--text-primary);
-  <br>color: var(--bg-surface);
-  <br>}
-  <br>
-  <br>.category-tab .tab-count {
-  <br>font-size: 0.75rem;
-  <br>padding: 0.05rem 0.42rem;
-  <br>border-radius: 999px;
-  <br>background-color: var(--bg-subtle);
-  <br>color: var(--text-secondary);
-  <br>}
-  <br>
-  <br>.category-tab.active .tab-count {
-  <br>background-color: rgba(255, 255, 255, 0.2);
-  <br>color: #ffffff;
-  <br>}
-  <br>
-  <br>/* Main Content */
-  <br>.main-container {
-  <br>max-width: 1120px;
-  <br>margin: 0 auto;
-  <br>padding: 2rem 1.5rem 4rem;
-  <br>}
-  <br>
-  <br>.categories-list {
-  <br>display: flex;
-  <br>flex-direction: column;
-  <br>gap: 2.25rem;
-  <br>}
-  <br>
-  <br>.category-section {
-  <br>background-color: var(--bg-surface);
-  <br>border: 1px solid var(--border-subtle);
-  <br>border-radius: var(--radius-lg);
-  <br>box-shadow: var(--shadow-sm);
-  <br>overflow: hidden;
-  <br>}
-  <br>
-  <br>.category-header {
-  <br>display: flex;
-  <br>align-items: baseline;
-  <br>justify-content: space-between;
-  <br>flex-wrap: wrap;
-  <br>gap: 0.5rem;
-  <br>padding: 1.15rem 1.5rem;
-  <br>background-color: var(--bg-subtle);
-  <br>border-bottom: 1px solid var(--border-subtle);
-  <br>}
-  <br>
-  <br>.category-title {
-  <br>font-size: 1.2rem;
-  <br>font-weight: 700;
-  <br>color: var(--text-primary);
-  <br>display: flex;
-  <br>align-items: center;
-  <br>gap: 0.6rem;
-  <br>}
-  <br>
-  <br>.category-marker {
-  <br>display: inline-block;
-  <br>width: 6px;
-  <br>height: 18px;
-  <br>border-radius: 3px;
-  <br>background-color: var(--accent-primary);
-  <br>}
-  <br>
-  <br>.category-meta {
-  <br>font-size: 0.82rem;
-  <br>color: var(--text-secondary);
-  <br>}
-  <br>
-  <br>.book-list {
-  <br>list-style: none;
-  <br>display: grid;
-  <br>grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  <br>gap: 1px;
-  <br>background-color: var(--border-subtle);
-  <br>}
-  <br>
-  <br>.book-item {
-  <br>background-color: var(--bg-surface);
-  <br>display: flex;
-  <br>}
-  <br>
-  <br>.book-card {
-  <br>display: flex;
-  <br>align-items: center;
-  <br>justify-content: space-between;
-  <br>gap: 0.95rem;
-  <br>width: 100%;
-  <br>padding: 0.85rem 1.25rem;
-  <br>text-decoration: none;
-  <br>color: inherit;
-  <br>transition: background-color 0.15s ease;
-  <br>}
-  <br>
-  <br>.book-cover-wrap {
-  <br>width: 60px;
-  <br>height: 76px;
-  <br>flex-shrink: 0;
-  <br>border-radius: 6px;
-  <br>background-color: var(--bg-subtle);
-  <br>border: 1px solid var(--border-subtle);
-  <br>box-shadow: 0 2px 6px rgba(31, 36, 33, 0.08);
-  <br>display: flex;
-  <br>align-items: center;
-  <br>justify-content: center;
-  <br>overflow: hidden;
-  <br>position: relative;
-  <br>}
-  <br>
-  <br>.book-cover-img {
-  <br>width: 100%;
-  <br>height: 100%;
-  <br>object-fit: contain;
-  <br>display: block;
-  <br>background-color: #ffffff;
-  <br>transition: transform 0.2s ease;
-  <br>}
-  <br>
-  <br>a.book-card:hover .book-cover-img {
-  <br>transform: scale(1.04);
-  <br>}
-  <br>
-  <br>.book-cover-placeholder {
-  <br>width: 22px;
-  <br>height: 22px;
-  <br>color: var(--text-muted);
-  <br>opacity: 0.55;
-  <br>}
-  <br>
-  <br>a.book-card:hover {
-  <br>background-color: var(--bg-hover);
-  <br>}
-  <br>
-  <br>a.book-card:hover .book-title {
-  <br>color: var(--accent-primary);
-  <br>}
-  <br>
-  <br>a.book-card:hover .link-badge {
-  <br>background-color: var(--accent-primary);
-  <br>color: #ffffff;
-  <br>}
-  <br>
-  <br>.book-info {
-  <br>min-width: 0;
-  <br>flex: 1;
-  <br>}
-  <br>
-  <br>.book-title {
-  <br>font-family: var(--font-serif);
-  <br>font-size: 1.03rem;
-  <br>font-weight: 500;
-  <br>color: var(--text-primary);
-  <br>line-height: 1.4;
-  <br>word-break: break-word;
-  <br>transition: color 0.15s ease;
-  <br>}
-  <br>
-  <br>.link-badge {
-  <br>display: inline-flex;
-  <br>align-items: center;
-  <br>gap: 0.3rem;
-  <br>flex-shrink: 0;
-  <br>padding: 0.32rem 0.68rem;
-  <br>font-size: 0.78rem;
-  <br>font-weight: 600;
-  <br>border-radius: var(--radius-sm);
-  <br>background-color: var(--accent-soft);
-  <br>color: var(--accent-primary);
-  <br>transition: background-color 0.15s ease, color 0.15s ease;
-  <br>}
-  <br>
-  <br>.no-link-badge {
-  <br>display: inline-flex;
-  <br>align-items: center;
-  <br>flex-shrink: 0;
-  <br>padding: 0.28rem 0.6rem;
-  <br>font-size: 0.75rem;
-  <br>color: var(--text-muted);
-  <br>background-color: var(--bg-page);
-  <br>border: 1px solid var(--border-subtle);
-  <br>border-radius: var(--radius-sm);
-  <br>}
-  <br>
-  <br>/* Status &amp; Empty States */
-  <br>.status-box {
-  <br>background-color: var(--bg-surface);
-  <br>border: 1px solid var(--border-subtle);
-  <br>border-radius: var(--radius-lg);
-  <br>padding: 3rem 1.5rem;
-  <br>text-align: center;
-  <br>box-shadow: var(--shadow-sm);
-  <br>}
-  <br>
-  <br>.status-title {
-  <br>font-size: 1.1rem;
-  <br>font-weight: 600;
-  <br>color: var(--text-primary);
-  <br>margin-bottom: 0.4rem;
-  <br>}
-  <br>
-  <br>.status-desc {
-  <br>font-size: 0.9rem;
-  <br>color: var(--text-secondary);
-  <br>}
-  <br>
-  <br>.spinner {
-  <br>width: 32px;
-  <br>height: 32px;
-  <br>border: 3px solid var(--border-subtle);
-  <br>border-top-color: var(--accent-primary);
-  <br>border-radius: 50%;
-  <br>margin: 0 auto 1rem;
-  <br>animation: spin 0.8s linear infinite;
-  <br>}
-  <br>
-  <br>@keyframes spin {
-  <br>to {
-  <br>transform: rotate(360deg);
-  <br>}
-  <br>}
-  <br>
-  <br>.error-box {
-  <br>border-color: #e4b4a6;
-  <br>background-color: #fff8f6;
-  <br>}
-  <br>
-  <br>@media (max-width: 640px) {
-  <br>.controls-wrapper {
-  <br>padding: 0.75rem 1rem;
-  <br>}
-  <br>
-  <br>.main-container {
-  <br>padding: 1.25rem 1rem 3rem;
-  <br>}
-  <br>
-  <br>.category-header {
-  <br>padding: 0.95rem 1.1rem;
-  <br>}
-  <br>
-  <br>.book-list {
-  <br>grid-template-columns: 1fr;
-  <br>}
-  <br>
-  <br>.book-card {
-  <br>padding: 0.85rem 1.1rem;
-  <br>}
-  <br>}
-  <br>&lt;/style&gt;
-  <br>&lt;/head&gt;
-  <br>&lt;body&gt;
-  <br>&lt;div class="controls-wrapper"&gt;
-  <br>&lt;div class="controls-inner"&gt;
-  <br>&lt;div class="search-row"&gt;
-  <br>&lt;div class="search-box"&gt;
-  <br>&lt;svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"&gt;
-  <br>&lt;circle cx="11" cy="11" r="8"&gt;&lt;/circle&gt;
-  <br>&lt;line x1="21" y1="21" x2="16.65" y2="16.65"&gt;&lt;/line&gt;
-  <br>&lt;/svg&gt;
-  <br>&lt;input id="search-input" class="search-input" type="search" placeholder="搜尋書名或分類..." autocomplete="off"&gt;
-  <br>&lt;button id="clear-search-btn" class="clear-search-btn" type="button" aria-label="清除搜尋"&gt;&amp;times;&lt;/button&gt;
-  <br>&lt;/div&gt;
-  <br>
-  <br>&lt;div class="filter-meta-group"&gt;
-  <br>&lt;label class="toggle-label" for="only-links-checkbox"&gt;
-  <br>&lt;input id="only-links-checkbox" class="toggle-checkbox" type="checkbox"&gt;
-  <br>僅顯示有介紹連結的書籍
-  <br>&lt;/label&gt;
-  <br>&lt;span id="stats-summary" class="stats-summary" aria-live="polite"&gt;載入中...&lt;/span&gt;
-  <br>&lt;/div&gt;
-  <br>&lt;/div&gt;
-  <br>
-  <br>&lt;nav id="category-nav" class="category-nav" aria-label="書籍分類篩選"&gt;&lt;/nav&gt;
-  <br>&lt;/div&gt;
-  <br>&lt;/div&gt;
-  <br>
-  <br>&lt;main class="main-container"&gt;
-  <br>&lt;div id="content-area"&gt;
-  <br>&lt;div class="status-box" role="status"&gt;
-  <br>&lt;div class="spinner" aria-hidden="true"&gt;&lt;/div&gt;
-  <br>&lt;p class="status-title"&gt;正在讀取書單資料...&lt;/p&gt;
-  <br>&lt;p class="status-desc"&gt;正從線上書單同步最新分類與書籍連結&lt;/p&gt;
-  <br>&lt;/div&gt;
-  <br>&lt;/div&gt;
-  <br>&lt;/main&gt;
-  <br>
-  <br>&lt;script&gt;
-  <br>/**
-  <br>* Google Sheet 設定
-  <br>* 請確保該 Google Sheet 已開啟「知道連結的任何人都能檢視」權限。
-  <br>*
-  <br>* 欄位對應：
-  <br>* - Column A：分類（空白時自動沿用上一列分類）
-  <br>* - Column B：書名
-  <br>* - Column C：書籍介紹連結
-  <br>* - Column D：書籍封面圖片網址（空白時自動查詢 Open Library 作為備援）
-  <br>*/
-  <br>const SPREADSHEET_ID = '12zw_Tm9rmINLc6dT9lll9TvsJXzu95TxymGQz9bRYUw';
-  <br>const SHEET_NAME = 'SALE-LIST';
-  <br>const CATEGORY_NAV_ROWS = 2;
-  <br>
-  <br>const dynamicCoverCache = new Map();
-  <br>
-  <br>const state = {
-  <br>categories: [],
-  <br>activeCategory: 'ALL',
-  <br>searchQuery: '',
-  <br>onlyWithLinks: false,
-  <br>};
-  <br>
-  <br>let elements = {};
-  <br>
-  <br>function buildGvizUrl(tqxParam) {
-  <br>const base = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq`;
-  <br>const params = new URLSearchParams({
-  <br>tqx: tqxParam,
-  <br>sheet: SHEET_NAME,
-  <br>});
-  <br>return `${base}?${params.toString()}`;
-  <br>}
-  <br>
-  <br>function parseGvizResponseText(rawText) {
-  <br>const startIdx = rawText.indexOf('{');
-  <br>const endIdx = rawText.lastIndexOf('}');
-  <br>if (startIdx === -1 || endIdx === -1 || endIdx &lt;= startIdx) {
-  <br>throw new Error('無法解析 Google Sheet 回傳的資料格式。');
-  <br>}
-  <br>return JSON.parse(rawText.slice(startIdx, endIdx + 1));
-  <br>}
-  <br>
-  <br>function fetchViaJsonp() {
-  <br>return new Promise((resolve, reject) =&gt; {
-  <br>const callbackName = `gvizCallback_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
-  <br>const script = document.createElement('script');
-  <br>const timeoutId = window.setTimeout(() =&gt; {
-  <br>cleanup();
-  <br>reject(new Error('讀取 Google Sheet 逾時，請檢查網路連線或試算表權限。'));
-  <br>}, 12000);
-  <br>
-  <br>function cleanup() {
-  <br>window.clearTimeout(timeoutId);
-  <br>delete window[callbackName];
-  <br>if (script.parentNode) {
-  <br>script.parentNode.removeChild(script);
-  <br>}
-  <br>}
-  <br>
-  <br>window[callbackName] = (data) =&gt; {
-  <br>cleanup();
-  <br>resolve(data);
-  <br>};
-  <br>
-  <br>script.src = buildGvizUrl(`responseHandler:${callbackName}`);
-  <br>script.onerror = () =&gt; {
-  <br>cleanup();
-  <br>reject(new Error('無法載入 Google Sheet 資料，請確認試算表已開啟檢視權限。'));
-  <br>};
-  <br>
-  <br>document.head.appendChild(script);
-  <br>});
-  <br>}
-  <br>
-  <br>async function fetchSheetData() {
-  <br>if (window.location.protocol === 'file:') {
-  <br>return fetchViaJsonp();
-  <br>}
-  <br>
-  <br>try {
-  <br>const response = await fetch(buildGvizUrl('out:json'), { cache: 'no-store' });
-  <br>if (!response.ok) {
-  <br>throw new Error(`HTTP 錯誤 (${response.status})`);
-  <br>}
-  <br>const text = await response.text();
-  <br>return parseGvizResponseText(text);
-  <br>} catch (err) {
-  <br>return fetchViaJsonp();
-  <br>}
-  <br>}
-  <br>
-  <br>function getCellValue(row, colIndex) {
-  <br>const cell = row?.c?.[colIndex];
-  <br>if (!cell || cell.v === null || cell.v === undefined) {
-  <br>return '';
-  <br>}
-  <br>return String(cell.v).trim();
-  <br>}
-  <br>
-  <br>function normalizeUrl(rawUrl) {
-  <br>if (!rawUrl) return '';
-  <br>try {
-  <br>const parsed = new URL(rawUrl);
-  <br>if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
-  <br>return parsed.href;
-  <br>}
-  <br>return '';
-  <br>} catch {
-  <br>return '';
-  <br>}
-  <br>}
-  <br>
-  <br>function cleanQueryTitle(title) {
-  <br>return title
-  <br>.replace(/\bICR\s*:?\s*/gi, 'I Can Read ')
-  <br>.replace(/\/\s*My First\b/gi, ' My First')
-  <br>.replace(/\/\s*HC\b/gi, '')
-  <br>.replace(/#0?(\d+)/g, ' $1 ')
-  <br>.replace(/[:/]/g, ' ')
-  <br>.replace(/\s+/g, ' ')
-  <br>.trim();
-  <br>}
-  <br>
-  <br>async function fetchFallbackCover(title) {
-  <br>const lower = title.trim().toLowerCase();
-  <br>if (dynamicCoverCache.has(lower)) {
-  <br>return dynamicCoverCache.get(lower);
-  <br>}
-  <br>dynamicCoverCache.set(lower, null);
-  <br>
-  <br>try {
-  <br>const q = encodeURIComponent(cleanQueryTitle(title));
-  <br>const res = await fetch(`https://openlibrary.org/search.json?limit=1&amp;q=${q}`);
-  <br>if (!res.ok) return null;
-  <br>const data = await res.json();
-  <br>const coverId = data?.docs?.[0]?.cover_i;
-  <br>if (coverId) {
-  <br>const url = `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`;
-  <br>dynamicCoverCache.set(lower, url);
-  <br>return url;
-  <br>}
-  <br>} catch {
-  <br>// Ignore fallback lookup errors silently
-  <br>}
-  <br>return null;
-  <br>}
-  <br>
-  <br>function parseRowsToCategories(gvizData) {
-  <br>if (gvizData?.status === 'error') {
-  <br>const message = gvizData.errors?.[0]?.detailed_message || 'Google Sheet 回傳錯誤';
-  <br>throw new Error(message);
-  <br>}
-  <br>
-  <br>const rows = gvizData?.table?.rows || [];
-  <br>const categoryMap = new Map();
-  <br>const categories = [];
-  <br>let currentCategoryName = '未分類';
-  <br>
-  <br>rows.forEach((row, index) =&gt; {
-  <br>const colA = getCellValue(row, 0);
-  <br>const colB = getCellValue(row, 1);
-  <br>const colC = getCellValue(row, 2);
-  <br>const colD = getCellValue(row, 3);
-  <br>
-  <br>// 略過表頭列
-  <br>if (index === 0 &amp;&amp; (colA === '類別' || colB === '書名')) {
-  <br>return;
-  <br>}
-  <br>
-  <br>// 略過完全空白列
-  <br>if (!colA &amp;&amp; !colB) {
-  <br>return;
-  <br>}
-  <br>
-  <br>// Column A 有值時更新目前分類；空白時沿用上一個分類
-  <br>if (colA) {
-  <br>currentCategoryName = colA;
-  <br>}
-  <br>
-  <br>// 確保分類物件存在
-  <br>if (!categoryMap.has(currentCategoryName)) {
-  <br>const catObj = {
-  <br>name: currentCategoryName,
-  <br>books: [],
-  <br>};
-  <br>categoryMap.set(currentCategoryName, catObj);
-  <br>categories.push(catObj);
-  <br>}
-  <br>
-  <br>// Column B 有書名時加入該分類清單，並讀取 Column D 封面網址
-  <br>if (colB) {
-  <br>const sheetCover = normalizeUrl(colD);
-  <br>const cachedCover = dynamicCoverCache.get(colB.trim().toLowerCase()) || '';
-  <br>categoryMap.get(currentCategoryName).books.push({
-  <br>title: colB,
-  <br>url: normalizeUrl(colC),
-  <br>coverUrl: sheetCover || cachedCover,
-  <br>});
-  <br>}
-  <br>});
-  <br>
-  <br>return categories;
-  <br>}
-  <br>
-  <br>function getFilteredCategories() {
-  <br>const query = state.searchQuery.trim().toLowerCase();
-  <br>
-  <br>return state.categories
-  <br>.filter((cat) =&gt; state.activeCategory === 'ALL' || cat.name === state.activeCategory)
-  <br>.map((cat) =&gt; {
-  <br>const categoryMatchesQuery = query &amp;&amp; cat.name.toLowerCase().includes(query);
-  <br>const filteredBooks = cat.books.filter((book) =&gt; {
-  <br>if (state.onlyWithLinks &amp;&amp; !book.url) {
-  <br>return false;
-  <br>}
-  <br>if (!query || categoryMatchesQuery) {
-  <br>return true;
-  <br>}
-  <br>return book.title.toLowerCase().includes(query);
-  <br>});
-  <br>
-  <br>return {
-  <br>name: cat.name,
-  <br>books: filteredBooks,
-  <br>};
-  <br>})
-  <br>.filter((cat) =&gt; cat.books.length &gt; 0);
-  <br>}
-  <br>
-  <br>function renderCategoryNav() {
-  <br>const nav = elements.categoryNav;
-  <br>nav.textContent = '';
-  <br>
-  <br>const query = state.searchQuery.trim().toLowerCase();
-  <br>const countBookMatch = (cat) =&gt; {
-  <br>const categoryMatchesQuery = query &amp;&amp; cat.name.toLowerCase().includes(query);
-  <br>return cat.books.filter((book) =&gt; {
-  <br>if (state.onlyWithLinks &amp;&amp; !book.url) return false;
-  <br>if (!query || categoryMatchesQuery) return true;
-  <br>return book.title.toLowerCase().includes(query);
-  <br>}).length;
-  <br>};
-  <br>
-  <br>const totalCount = state.categories.reduce((sum, cat) =&gt; sum + countBookMatch(cat), 0);
-  <br>const tabs = [createCategoryTab('ALL', '全部類別', totalCount)];
-  <br>
-  <br>state.categories.forEach((cat) =&gt; {
-  <br>const count = countBookMatch(cat);
-  <br>tabs.push(createCategoryTab(cat.name, cat.name, count));
-  <br>});
-  <br>
-  <br>let startIndex = 0;
-  <br>for (let i = 0; i &lt; CATEGORY_NAV_ROWS; i++) {
-  <br>const size =
-  <br>Math.floor(tabs.length / CATEGORY_NAV_ROWS) +
-  <br>(i &lt; tabs.length % CATEGORY_NAV_ROWS ? 1 : 0);
-  <br>const rowItems = tabs.slice(startIndex, startIndex + size);
-  <br>startIndex += size;
-  <br>
-  <br>if (rowItems.length === 0) continue;
-  <br>
-  <br>const rowDiv = document.createElement('div');
-  <br>rowDiv.className = 'category-nav-row';
-  <br>rowItems.forEach((tab) =&gt; rowDiv.appendChild(tab));
-  <br>nav.appendChild(rowDiv);
-  <br>}
-  <br>}
-  <br>
-  <br>function createCategoryTab(value, label, count) {
-  <br>const btn = document.createElement('button');
-  <br>btn.type = 'button';
-  <br>btn.className = `category-tab${state.activeCategory === value ? ' active' : ''}`;
-  <br>btn.addEventListener('click', () =&gt; {
-  <br>state.activeCategory = value;
-  <br>renderCategoryNav();
-  <br>renderBooks();
-  <br>});
-  <br>
-  <br>const textSpan = document.createElement('span');
-  <br>textSpan.textContent = label;
-  <br>
-  <br>const countSpan = document.createElement('span');
-  <br>countSpan.className = 'tab-count';
-  <br>countSpan.textContent = String(count);
-  <br>
-  <br>btn.appendChild(textSpan);
-  <br>btn.appendChild(countSpan);
-  <br>return btn;
-  <br>}
-  <br>
-  <br>function renderBooks() {
-  <br>const filteredCategories = getFilteredCategories();
-  <br>const totalBooksShown = filteredCategories.reduce((sum, cat) =&gt; sum + cat.books.length, 0);
-  <br>const totalWithLinksShown = filteredCategories.reduce(
-  <br>(sum, cat) =&gt; sum + cat.books.filter((b) =&gt; Boolean(b.url)).length,
-  <br>0
-  <br>);
-  <br>
-  <br>elements.statsSummary.textContent = `共 ${filteredCategories.length} 個分類・${totalBooksShown} 本書（${totalWithLinksShown} 本含介紹連結）`;
-  <br>
-  <br>const container = elements.contentArea;
-  <br>container.textContent = '';
-  <br>
-  <br>if (filteredCategories.length === 0) {
-  <br>const emptyBox = document.createElement('div');
-  <br>emptyBox.className = 'status-box';
-  <br>
-  <br>const title = document.createElement('p');
-  <br>title.className = 'status-title';
-  <br>title.textContent = '找不到符合條件的書籍';
-  <br>
-  <br>const desc = document.createElement('p');
-  <br>desc.className = 'status-desc';
-  <br>desc.textContent = '請嘗試清除搜尋關鍵字或切換其他分類。';
-  <br>
-  <br>emptyBox.appendChild(title);
-  <br>emptyBox.appendChild(desc);
-  <br>container.appendChild(emptyBox);
-  <br>return;
-  <br>}
-  <br>
-  <br>const listWrapper = document.createElement('div');
-  <br>listWrapper.className = 'categories-list';
-  <br>
-  <br>filteredCategories.forEach((cat) =&gt; {
-  <br>const section = document.createElement('section');
-  <br>section.className = 'category-section';
-  <br>
-  <br>const header = document.createElement('div');
-  <br>header.className = 'category-header';
-  <br>
-  <br>const titleEl = document.createElement('h2');
-  <br>titleEl.className = 'category-title';
-  <br>
-  <br>const marker = document.createElement('span');
-  <br>marker.className = 'category-marker';
-  <br>marker.setAttribute('aria-hidden', 'true');
-  <br>
-  <br>const titleText = document.createElement('span');
-  <br>titleText.textContent = cat.name;
-  <br>
-  <br>titleEl.appendChild(marker);
-  <br>titleEl.appendChild(titleText);
-  <br>
-  <br>const linkedCount = cat.books.filter((b) =&gt; Boolean(b.url)).length;
-  <br>const metaEl = document.createElement('span');
-  <br>metaEl.className = 'category-meta';
-  <br>metaEl.textContent = `${cat.books.length} 本書・${linkedCount} 篇介紹`;
-  <br>
-  <br>header.appendChild(titleEl);
-  <br>header.appendChild(metaEl);
-  <br>
-  <br>const ul = document.createElement('ul');
-  <br>ul.className = 'book-list';
-  <br>
-  <br>cat.books.forEach((book) =&gt; {
-  <br>const li = document.createElement('li');
-  <br>li.className = 'book-item';
-  <br>li.appendChild(createBookCard(book));
-  <br>ul.appendChild(li);
-  <br>});
-  <br>
-  <br>section.appendChild(header);
-  <br>section.appendChild(ul);
-  <br>listWrapper.appendChild(section);
-  <br>});
-  <br>
-  <br>container.appendChild(listWrapper);
-  <br>}
-  <br>
-  <br>function createPlaceholderIcon() {
-  <br>const svgNS = 'http://www.w3.org/2000/svg';
-  <br>const svg = document.createElementNS(svgNS, 'svg');
-  <br>svg.setAttribute('class', 'book-cover-placeholder');
-  <br>svg.setAttribute('viewBox', '0 0 24 24');
-  <br>svg.setAttribute('fill', 'none');
-  <br>svg.setAttribute('stroke', 'currentColor');
-  <br>svg.setAttribute('stroke-width', '1.8');
-  <br>svg.setAttribute('stroke-linecap', 'round');
-  <br>svg.setAttribute('stroke-linejoin', 'round');
-  <br>svg.setAttribute('aria-hidden', 'true');
-  <br>
-  <br>const path1 = document.createElementNS(svgNS, 'path');
-  <br>path1.setAttribute('d', 'M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20');
-  <br>svg.appendChild(path1);
-  <br>return svg;
-  <br>}
-  <br>
-  <br>function attachCoverImage(coverWrap, url, title) {
-  <br>const img = document.createElement('img');
-  <br>img.className = 'book-cover-img';
-  <br>img.src = url;
-  <br>img.alt = `${title} 封面`;
-  <br>img.loading = 'lazy';
-  <br>img.decoding = 'async';
-  <br>img.referrerPolicy = 'no-referrer';
-  <br>
-  <br>img.onerror = () =&gt; {
-  <br>coverWrap.textContent = '';
-  <br>coverWrap.appendChild(createPlaceholderIcon());
-  <br>};
-  <br>
-  <br>coverWrap.textContent = '';
-  <br>coverWrap.appendChild(img);
-  <br>}
-  <br>
-  <br>function createBookCard(book) {
-  <br>const card = book.url ? document.createElement('a') : document.createElement('div');
-  <br>card.className = 'book-card';
-  <br>
-  <br>if (book.url) {
-  <br>card.href = book.url;
-  <br>card.target = '_blank';
-  <br>card.rel = 'noopener noreferrer';
-  <br>}
-  <br>
-  <br>const coverWrap = document.createElement('div');
-  <br>coverWrap.className = 'book-cover-wrap';
-  <br>
-  <br>if (book.coverUrl) {
-  <br>attachCoverImage(coverWrap, book.coverUrl, book.title);
-  <br>} else {
-  <br>coverWrap.appendChild(createPlaceholderIcon());
-  <br>fetchFallbackCover(book.title).then((foundUrl) =&gt; {
-  <br>if (foundUrl) {
-  <br>book.coverUrl = foundUrl;
-  <br>attachCoverImage(coverWrap, foundUrl, book.title);
-  <br>}
-  <br>});
-  <br>}
-  <br>
-  <br>card.appendChild(coverWrap);
-  <br>
-  <br>const infoDiv = document.createElement('div');
-  <br>infoDiv.className = 'book-info';
-  <br>
-  <br>const titleP = document.createElement('p');
-  <br>titleP.className = 'book-title';
-  <br>titleP.textContent = book.title;
-  <br>infoDiv.appendChild(titleP);
-  <br>
-  <br>card.appendChild(infoDiv);
-  <br>
-  <br>if (book.url) {
-  <br>const badge = document.createElement('span');
-  <br>badge.className = 'link-badge';
-  <br>badge.textContent = '閱讀介紹 ↗';
-  <br>card.appendChild(badge);
-  <br>} else {
-  <br>const noLink = document.createElement('span');
-  <br>noLink.className = 'no-link-badge';
-  <br>noLink.textContent = '尚無連結';
-  <br>card.appendChild(noLink);
-  <br>}
-  <br>
-  <br>return card;
-  <br>}
-  <br>
-  <br>function renderLoading() {
-  <br>elements.statsSummary.textContent = '讀取中...';
-  <br>elements.contentArea.innerHTML = `
-  <br>&lt;div class="status-box" role="status"&gt;
-  <br>&lt;div class="spinner" aria-hidden="true"&gt;&lt;/div&gt;
-  <br>&lt;p class="status-title"&gt;正在讀取書單資料...&lt;/p&gt;
-  <br>&lt;p class="status-desc"&gt;正從線上書單同步最新分類與書籍連結&lt;/p&gt;
-  <br>&lt;/div&gt;
-  <br>`;
-  <br>}
-  <br>
-  <br>function renderError(message) {
-  <br>elements.statsSummary.textContent = '讀取失敗';
-  <br>const box = document.createElement('div');
-  <br>box.className = 'status-box error-box';
-  <br>
-  <br>const title = document.createElement('p');
-  <br>title.className = 'status-title';
-  <br>title.textContent = '無法讀取 Google Sheet 資料';
-  <br>
-  <br>const desc = document.createElement('p');
-  <br>desc.className = 'status-desc';
-  <br>desc.textContent = message;
-  <br>
-  <br>box.appendChild(title);
-  <br>box.appendChild(desc);
-  <br>
-  <br>elements.contentArea.textContent = '';
-  <br>elements.contentArea.appendChild(box);
-  <br>}
-  <br>
-  <br>async function init() {
-  <br>renderLoading();
-  <br>try {
-  <br>const rawData = await fetchSheetData();
-  <br>state.categories = parseRowsToCategories(rawData);
-  <br>
-  <br>if (
-  <br>state.activeCategory !== 'ALL' &amp;&amp;
-  <br>!state.categories.some((cat) =&gt; cat.name === state.activeCategory)
-  <br>) {
-  <br>state.activeCategory = 'ALL';
-  <br>}
-  <br>
-  <br>renderCategoryNav();
-  <br>renderBooks();
-  <br>} catch (err) {
-  <br>renderError(err instanceof Error ? err.message : '發生未知錯誤，請稍後再試。');
-  <br>}
-  <br>}
-  <br>
-  <br>function bootstrap() {
-  <br>elements = {
-  <br>contentArea: document.getElementById('content-area'),
-  <br>categoryNav: document.getElementById('category-nav'),
-  <br>searchInput: document.getElementById('search-input'),
-  <br>clearSearchBtn: document.getElementById('clear-search-btn'),
-  <br>onlyLinksCheckbox: document.getElementById('only-links-checkbox'),
-  <br>statsSummary: document.getElementById('stats-summary'),
-  <br>};
-  <br>
-  <br>elements.searchInput.addEventListener('input', (event) =&gt; {
-  <br>state.searchQuery = event.target.value;
-  <br>elements.clearSearchBtn.classList.toggle('visible', state.searchQuery.length &gt; 0);
-  <br>renderCategoryNav();
-  <br>renderBooks();
-  <br>});
-  <br>
-  <br>elements.clearSearchBtn.addEventListener('click', () =&gt; {
-  <br>state.searchQuery = '';
-  <br>elements.searchInput.value = '';
-  <br>elements.clearSearchBtn.classList.remove('visible');
-  <br>elements.searchInput.focus();
-  <br>renderCategoryNav();
-  <br>renderBooks();
-  <br>});
-  <br>
-  <br>elements.onlyLinksCheckbox.addEventListener('change', (event) =&gt; {
-  <br>state.onlyWithLinks = event.target.checked;
-  <br>renderCategoryNav();
-  <br>renderBooks();
-  <br>});
-  <br>
-  <br>init();
-  <br>}
-  <br>
-  <br>if (document.readyState === 'loading') {
-  <br>document.addEventListener('DOMContentLoaded', bootstrap);
-  <br>} else {
-  <br>bootstrap();
-  <br>}
-  <br>&lt;/script&gt;
-  <br>&lt;/body&gt;
-  <br>&lt;/html&gt;
-</h1>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>書籍內文介紹 | 書單分類目錄</title>
+  <meta name="description" content="依分類整理的英文繪本、讀本與章節書內文介紹目錄。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg-page: #faf7f2;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f3ede2;
+  --bg-hover: #f7f2e9;
+  --text-primary: #1f2421;
+  --text-secondary: #5a625d;
+  --text-muted: #878e88;
+  --accent-primary: #b8522a;
+  --accent-primary-hover: #963f1d;
+  --accent-soft: #fbeee8;
+  --accent-teal: #2b6758;
+  --accent-teal-soft: #e6f2ee;
+  --border-subtle: #e5dec9;
+  --border-strong: #d2c8b0;
+  --shadow-sm: 0 1px 3px rgba(31, 36, 33, 0.05), 0 1px 2px rgba(31, 36, 33, 0.03);
+  --shadow-md: 0 6px 18px rgba(31, 36, 33, 0.07), 0 2px 6px rgba(31, 36, 33, 0.04);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --font-sans: "Noto Sans TC", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Newsreader", "Noto Serif TC", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Controls Bar */
+.controls-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: rgba(250, 247, 242, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.9rem 1.5rem;
+}
+
+.controls-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+}
+
+.search-box {
+  position: relative;
+  flex: 1 1 280px;
+  max-width: 460px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 17px;
+  height: 17px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 2.2rem 0.6rem 2.5rem;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: var(--text-primary);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(184, 82, 42, 0.14);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.2rem;
+  display: none;
+  line-height: 1;
+  font-size: 1.1rem;
+}
+
+.clear-search-btn.visible {
+  display: block;
+}
+
+.filter-meta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent-primary);
+  cursor: pointer;
+}
+
+.stats-summary {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-subtle);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+
+/* Category Tabs */
+.category-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category-nav-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.85rem;
+  font-size: 0.86rem;
+  font-weight: 500;
+  font-family: inherit;
+  white-space: nowrap;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.category-tab:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+  background-color: var(--bg-hover);
+}
+
+.category-tab.active {
+  background-color: var(--text-primary);
+  border-color: var(--text-primary);
+  color: var(--bg-surface);
+}
+
+.category-tab .tab-count {
+  font-size: 0.75rem;
+  padding: 0.05rem 0.42rem;
+  border-radius: 999px;
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+}
+
+.category-tab.active .tab-count {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Main Content */
+.main-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.category-section {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.category-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1.15rem 1.5rem;
+  background-color: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.category-marker {
+  display: inline-block;
+  width: 6px;
+  height: 18px;
+  border-radius: 3px;
+  background-color: var(--accent-primary);
+}
+
+.category-meta {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.book-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1px;
+  background-color: var(--border-subtle);
+}
+
+.book-item {
+  background-color: var(--bg-surface);
+  display: flex;
+}
+
+.book-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.95rem;
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.15s ease;
+}
+
+.book-cover-wrap {
+  width: 60px;
+  height: 76px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 6px rgba(31, 36, 33, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.book-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background-color: #ffffff;
+  transition: transform 0.2s ease;
+}
+
+a.book-card:hover .book-cover-img {
+  transform: scale(1.04);
+}
+
+.book-cover-placeholder {
+  width: 22px;
+  height: 22px;
+  color: var(--text-muted);
+  opacity: 0.55;
+}
+
+a.book-card:hover {
+  background-color: var(--bg-hover);
+}
+
+a.book-card:hover .book-title {
+  color: var(--accent-primary);
+}
+
+a.book-card:hover .link-badge {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+.book-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.book-title {
+  font-family: var(--font-serif);
+  font-size: 1.03rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.4;
+  word-break: break-word;
+  transition: color 0.15s ease;
+}
+
+.link-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+  padding: 0.32rem 0.68rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background-color: var(--accent-soft);
+  color: var(--accent-primary);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.no-link-badge {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0.28rem 0.6rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+/* Status & Empty States */
+.status-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.status-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.status-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-subtle);
+  border-top-color: var(--accent-primary);
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-box {
+  border-color: #e4b4a6;
+  background-color: #fff8f6;
+}
+
+@media (max-width: 640px) {
+  .controls-wrapper {
+    padding: 0.75rem 1rem;
+  }
+
+  .main-container {
+    padding: 1.25rem 1rem 3rem;
+  }
+
+  .category-header {
+    padding: 0.95rem 1.1rem;
+  }
+
+  .book-list {
+    grid-template-columns: 1fr;
+  }
+
+  .book-card {
+    padding: 0.85rem 1.1rem;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="controls-wrapper">
+    <div class="controls-inner">
+      <div class="search-row">
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input id="search-input" class="search-input" type="search" placeholder="搜尋書名或分類..." autocomplete="off">
+          <button id="clear-search-btn" class="clear-search-btn" type="button" aria-label="清除搜尋">&times;</button>
+        </div>
+
+        <div class="filter-meta-group">
+          <label class="toggle-label" for="only-links-checkbox">
+            <input id="only-links-checkbox" class="toggle-checkbox" type="checkbox">
+            僅顯示有介紹連結的書籍
+          </label>
+          <span id="stats-summary" class="stats-summary" aria-live="polite">載入中...</span>
+        </div>
+      </div>
+
+      <nav id="category-nav" class="category-nav" aria-label="書籍分類篩選"></nav>
+    </div>
+  </div>
+
+  <main class="main-container">
+    <div id="content-area">
+      <div class="status-box" role="status">
+        <div class="spinner" aria-hidden="true"></div>
+        <p class="status-title">正在讀取書單資料...</p>
+        <p class="status-desc">正從線上書單同步最新分類與書籍連結</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+/**
+ * Google Sheet 設定
+ * 請確保該 Google Sheet 已開啟「知道連結的任何人都能檢視」權限。
+ *
+ * 欄位對應：
+ * - Column A：分類（空白時自動沿用上一列分類）
+ * - Column B：書名
+ * - Column C：書籍介紹連結
+ * - Column D：書籍封面圖片網址（空白時自動查詢 Open Library 作為備援）
+ */
+const SPREADSHEET_ID = '12zw_Tm9rmINLc6dT9lll9TvsJXzu95TxymGQz9bRYUw';
+const SHEET_NAME = 'SALE-LIST';
+const CATEGORY_NAV_ROWS = 2;
+
+const dynamicCoverCache = new Map();
+
+const state = {
+  categories: [],
+  activeCategory: 'ALL',
+  searchQuery: '',
+  onlyWithLinks: false,
+};
+
+let elements = {};
+
+function buildGvizUrl(tqxParam) {
+  const base = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq`;
+  const params = new URLSearchParams({
+    tqx: tqxParam,
+    sheet: SHEET_NAME,
+  });
+  return `${base}?${params.toString()}`;
+}
+
+function parseGvizResponseText(rawText) {
+  const startIdx = rawText.indexOf('{');
+  const endIdx = rawText.lastIndexOf('}');
+  if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) {
+    throw new Error('無法解析 Google Sheet 回傳的資料格式。');
+  }
+  return JSON.parse(rawText.slice(startIdx, endIdx + 1));
+}
+
+function fetchViaJsonp() {
+  return new Promise((resolve, reject) => {
+    const callbackName = `gvizCallback_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
+    const script = document.createElement('script');
+    const timeoutId = window.setTimeout(() => {
+      cleanup();
+      reject(new Error('讀取 Google Sheet 逾時，請檢查網路連線或試算表權限。'));
+    }, 12000);
+
+    function cleanup() {
+      window.clearTimeout(timeoutId);
+      delete window[callbackName];
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    }
+
+    window[callbackName] = (data) => {
+      cleanup();
+      resolve(data);
+    };
+
+    script.src = buildGvizUrl(`responseHandler:${callbackName}`);
+    script.onerror = () => {
+      cleanup();
+      reject(new Error('無法載入 Google Sheet 資料，請確認試算表已開啟檢視權限。'));
+    };
+
+    document.head.appendChild(script);
+  });
+}
+
+async function fetchSheetData() {
+  if (window.location.protocol === 'file:') {
+    return fetchViaJsonp();
+  }
+
+  try {
+    const response = await fetch(buildGvizUrl('out:json'), { cache: 'no-store' });
+    if (!response.ok) {
+      throw new Error(`HTTP 錯誤 (${response.status})`);
+    }
+    const text = await response.text();
+    return parseGvizResponseText(text);
+  } catch (err) {
+    return fetchViaJsonp();
+  }
+}
+
+function getCellValue(row, colIndex) {
+  const cell = row?.c?.[colIndex];
+  if (!cell || cell.v === null || cell.v === undefined) {
+    return '';
+  }
+  return String(cell.v).trim();
+}
+
+function normalizeUrl(rawUrl) {
+  if (!rawUrl) return '';
+  try {
+    const parsed = new URL(rawUrl);
+    if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+      return parsed.href;
+    }
+    return '';
+  } catch {
+    return '';
+  }
+}
+
+function cleanQueryTitle(title) {
+  return title
+    .replace(/\bICR\s*:?\s*/gi, 'I Can Read ')
+    .replace(/\/\s*My First\b/gi, ' My First')
+    .replace(/\/\s*HC\b/gi, '')
+    .replace(/#0?(\d+)/g, ' $1 ')
+    .replace(/[:/]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+async function fetchFallbackCover(title) {
+  const lower = title.trim().toLowerCase();
+  if (dynamicCoverCache.has(lower)) {
+    return dynamicCoverCache.get(lower);
+  }
+  dynamicCoverCache.set(lower, null);
+
+  try {
+    const q = encodeURIComponent(cleanQueryTitle(title));
+    const res = await fetch(`https://openlibrary.org/search.json?limit=1&q=${q}`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    const coverId = data?.docs?.[0]?.cover_i;
+    if (coverId) {
+      const url = `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`;
+      dynamicCoverCache.set(lower, url);
+      return url;
+    }
+  } catch {
+    // Ignore fallback lookup errors silently
+  }
+  return null;
+}
+
+function parseRowsToCategories(gvizData) {
+  if (gvizData?.status === 'error') {
+    const message = gvizData.errors?.[0]?.detailed_message || 'Google Sheet 回傳錯誤';
+    throw new Error(message);
+  }
+
+  const rows = gvizData?.table?.rows || [];
+  const categoryMap = new Map();
+  const categories = [];
+  let currentCategoryName = '未分類';
+
+  rows.forEach((row, index) => {
+    const colA = getCellValue(row, 0);
+    const colB = getCellValue(row, 1);
+    const colC = getCellValue(row, 2);
+    const colD = getCellValue(row, 3);
+
+    // 略過表頭列
+    if (index === 0 && (colA === '類別' || colB === '書名')) {
+      return;
+    }
+
+    // 略過完全空白列
+    if (!colA && !colB) {
+      return;
+    }
+
+    // Column A 有值時更新目前分類；空白時沿用上一個分類
+    if (colA) {
+      currentCategoryName = colA;
+    }
+
+    // 確保分類物件存在
+    if (!categoryMap.has(currentCategoryName)) {
+      const catObj = {
+        name: currentCategoryName,
+        books: [],
+      };
+      categoryMap.set(currentCategoryName, catObj);
+      categories.push(catObj);
+    }
+
+    // Column B 有書名時加入該分類清單，並讀取 Column D 封面網址
+    if (colB) {
+      const sheetCover = normalizeUrl(colD);
+      const cachedCover = dynamicCoverCache.get(colB.trim().toLowerCase()) || '';
+      categoryMap.get(currentCategoryName).books.push({
+        title: colB,
+        url: normalizeUrl(colC),
+        coverUrl: sheetCover || cachedCover,
+      });
+    }
+  });
+
+  return categories;
+}
+
+function getFilteredCategories() {
+  const query = state.searchQuery.trim().toLowerCase();
+
+  return state.categories
+    .filter((cat) => state.activeCategory === 'ALL' || cat.name === state.activeCategory)
+    .map((cat) => {
+      const categoryMatchesQuery = query && cat.name.toLowerCase().includes(query);
+      const filteredBooks = cat.books.filter((book) => {
+        if (state.onlyWithLinks && !book.url) {
+          return false;
+        }
+        if (!query || categoryMatchesQuery) {
+          return true;
+        }
+        return book.title.toLowerCase().includes(query);
+      });
+
+      return {
+        name: cat.name,
+        books: filteredBooks,
+      };
+    })
+    .filter((cat) => cat.books.length > 0);
+}
+
+function renderCategoryNav() {
+  const nav = elements.categoryNav;
+  nav.textContent = '';
+
+  const query = state.searchQuery.trim().toLowerCase();
+  const countBookMatch = (cat) => {
+    const categoryMatchesQuery = query && cat.name.toLowerCase().includes(query);
+    return cat.books.filter((book) => {
+      if (state.onlyWithLinks && !book.url) return false;
+      if (!query || categoryMatchesQuery) return true;
+      return book.title.toLowerCase().includes(query);
+    }).length;
+  };
+
+  const totalCount = state.categories.reduce((sum, cat) => sum + countBookMatch(cat), 0);
+  const tabs = [createCategoryTab('ALL', '全部類別', totalCount)];
+
+  state.categories.forEach((cat) => {
+    const count = countBookMatch(cat);
+    tabs.push(createCategoryTab(cat.name, cat.name, count));
+  });
+
+  let startIndex = 0;
+  for (let i = 0; i < CATEGORY_NAV_ROWS; i++) {
+    const size =
+      Math.floor(tabs.length / CATEGORY_NAV_ROWS) +
+      (i < tabs.length % CATEGORY_NAV_ROWS ? 1 : 0);
+    const rowItems = tabs.slice(startIndex, startIndex + size);
+    startIndex += size;
+
+    if (rowItems.length === 0) continue;
+
+    const rowDiv = document.createElement('div');
+    rowDiv.className = 'category-nav-row';
+    rowItems.forEach((tab) => rowDiv.appendChild(tab));
+    nav.appendChild(rowDiv);
+  }
+}
+
+function createCategoryTab(value, label, count) {
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = `category-tab${state.activeCategory === value ? ' active' : ''}`;
+  btn.addEventListener('click', () => {
+    state.activeCategory = value;
+    renderCategoryNav();
+    renderBooks();
+  });
+
+  const textSpan = document.createElement('span');
+  textSpan.textContent = label;
+
+  const countSpan = document.createElement('span');
+  countSpan.className = 'tab-count';
+  countSpan.textContent = String(count);
+
+  btn.appendChild(textSpan);
+  btn.appendChild(countSpan);
+  return btn;
+}
+
+function renderBooks() {
+  const filteredCategories = getFilteredCategories();
+  const totalBooksShown = filteredCategories.reduce((sum, cat) => sum + cat.books.length, 0);
+  const totalWithLinksShown = filteredCategories.reduce(
+    (sum, cat) => sum + cat.books.filter((b) => Boolean(b.url)).length,
+    0
+  );
+
+  elements.statsSummary.textContent = `共 ${filteredCategories.length} 個分類・${totalBooksShown} 本書（${totalWithLinksShown} 本含介紹連結）`;
+
+  const container = elements.contentArea;
+  container.textContent = '';
+
+  if (filteredCategories.length === 0) {
+    const emptyBox = document.createElement('div');
+    emptyBox.className = 'status-box';
+
+    const title = document.createElement('p');
+    title.className = 'status-title';
+    title.textContent = '找不到符合條件的書籍';
+
+    const desc = document.createElement('p');
+    desc.className = 'status-desc';
+    desc.textContent = '請嘗試清除搜尋關鍵字或切換其他分類。';
+
+    emptyBox.appendChild(title);
+    emptyBox.appendChild(desc);
+    container.appendChild(emptyBox);
+    return;
+  }
+
+  const listWrapper = document.createElement('div');
+  listWrapper.className = 'categories-list';
+
+  filteredCategories.forEach((cat) => {
+    const section = document.createElement('section');
+    section.className = 'category-section';
+
+    const header = document.createElement('div');
+    header.className = 'category-header';
+
+    const titleEl = document.createElement('h2');
+    titleEl.className = 'category-title';
+
+    const marker = document.createElement('span');
+    marker.className = 'category-marker';
+    marker.setAttribute('aria-hidden', 'true');
+
+    const titleText = document.createElement('span');
+    titleText.textContent = cat.name;
+
+    titleEl.appendChild(marker);
+    titleEl.appendChild(titleText);
+
+    const linkedCount = cat.books.filter((b) => Boolean(b.url)).length;
+    const metaEl = document.createElement('span');
+    metaEl.className = 'category-meta';
+    metaEl.textContent = `${cat.books.length} 本書・${linkedCount} 篇介紹`;
+
+    header.appendChild(titleEl);
+    header.appendChild(metaEl);
+
+    const ul = document.createElement('ul');
+    ul.className = 'book-list';
+
+    cat.books.forEach((book) => {
+      const li = document.createElement('li');
+      li.className = 'book-item';
+      li.appendChild(createBookCard(book));
+      ul.appendChild(li);
+    });
+
+    section.appendChild(header);
+    section.appendChild(ul);
+    listWrapper.appendChild(section);
+  });
+
+  container.appendChild(listWrapper);
+}
+
+function createPlaceholderIcon() {
+  const svgNS = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(svgNS, 'svg');
+  svg.setAttribute('class', 'book-cover-placeholder');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('fill', 'none');
+  svg.setAttribute('stroke', 'currentColor');
+  svg.setAttribute('stroke-width', '1.8');
+  svg.setAttribute('stroke-linecap', 'round');
+  svg.setAttribute('stroke-linejoin', 'round');
+  svg.setAttribute('aria-hidden', 'true');
+
+  const path1 = document.createElementNS(svgNS, 'path');
+  path1.setAttribute('d', 'M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20');
+  svg.appendChild(path1);
+  return svg;
+}
+
+function attachCoverImage(coverWrap, url, title) {
+  const img = document.createElement('img');
+  img.className = 'book-cover-img';
+  img.src = url;
+  img.alt = `${title} 封面`;
+  img.loading = 'lazy';
+  img.decoding = 'async';
+  img.referrerPolicy = 'no-referrer';
+
+  img.onerror = () => {
+    coverWrap.textContent = '';
+    coverWrap.appendChild(createPlaceholderIcon());
+  };
+
+  coverWrap.textContent = '';
+  coverWrap.appendChild(img);
+}
+
+function createBookCard(book) {
+  const card = book.url ? document.createElement('a') : document.createElement('div');
+  card.className = 'book-card';
+
+  if (book.url) {
+    card.href = book.url;
+    card.target = '_blank';
+    card.rel = 'noopener noreferrer';
+  }
+
+  const coverWrap = document.createElement('div');
+  coverWrap.className = 'book-cover-wrap';
+
+  if (book.coverUrl) {
+    attachCoverImage(coverWrap, book.coverUrl, book.title);
+  } else {
+    coverWrap.appendChild(createPlaceholderIcon());
+    fetchFallbackCover(book.title).then((foundUrl) => {
+      if (foundUrl) {
+        book.coverUrl = foundUrl;
+        attachCoverImage(coverWrap, foundUrl, book.title);
+      }
+    });
+  }
+
+  card.appendChild(coverWrap);
+
+  const infoDiv = document.createElement('div');
+  infoDiv.className = 'book-info';
+
+  const titleP = document.createElement('p');
+  titleP.className = 'book-title';
+  titleP.textContent = book.title;
+  infoDiv.appendChild(titleP);
+
+  card.appendChild(infoDiv);
+
+  if (book.url) {
+    const badge = document.createElement('span');
+    badge.className = 'link-badge';
+    badge.textContent = '閱讀介紹 ↗';
+    card.appendChild(badge);
+  } else {
+    const noLink = document.createElement('span');
+    noLink.className = 'no-link-badge';
+    noLink.textContent = '尚無連結';
+    card.appendChild(noLink);
+  }
+
+  return card;
+}
+
+function renderLoading() {
+  elements.statsSummary.textContent = '讀取中...';
+  elements.contentArea.innerHTML = `
+    <div class="status-box" role="status">
+      <div class="spinner" aria-hidden="true"></div>
+      <p class="status-title">正在讀取書單資料...</p>
+      <p class="status-desc">正從線上書單同步最新分類與書籍連結</p>
+    </div>
+  `;
+}
+
+function renderError(message) {
+  elements.statsSummary.textContent = '讀取失敗';
+  const box = document.createElement('div');
+  box.className = 'status-box error-box';
+
+  const title = document.createElement('p');
+  title.className = 'status-title';
+  title.textContent = '無法讀取 Google Sheet 資料';
+
+  const desc = document.createElement('p');
+  desc.className = 'status-desc';
+  desc.textContent = message;
+
+  box.appendChild(title);
+  box.appendChild(desc);
+
+  elements.contentArea.textContent = '';
+  elements.contentArea.appendChild(box);
+}
+
+async function init() {
+  renderLoading();
+  try {
+    const rawData = await fetchSheetData();
+    state.categories = parseRowsToCategories(rawData);
+
+    if (
+      state.activeCategory !== 'ALL' &&
+      !state.categories.some((cat) => cat.name === state.activeCategory)
+    ) {
+      state.activeCategory = 'ALL';
+    }
+
+    renderCategoryNav();
+    renderBooks();
+  } catch (err) {
+    renderError(err instanceof Error ? err.message : '發生未知錯誤，請稍後再試。');
+  }
+}
+
+function bootstrap() {
+  elements = {
+    contentArea: document.getElementById('content-area'),
+    categoryNav: document.getElementById('category-nav'),
+    searchInput: document.getElementById('search-input'),
+    clearSearchBtn: document.getElementById('clear-search-btn'),
+    onlyLinksCheckbox: document.getElementById('only-links-checkbox'),
+    statsSummary: document.getElementById('stats-summary'),
+  };
+
+  elements.searchInput.addEventListener('input', (event) => {
+    state.searchQuery = event.target.value;
+    elements.clearSearchBtn.classList.toggle('visible', state.searchQuery.length > 0);
+    renderCategoryNav();
+    renderBooks();
+  });
+
+  elements.clearSearchBtn.addEventListener('click', () => {
+    state.searchQuery = '';
+    elements.searchInput.value = '';
+    elements.clearSearchBtn.classList.remove('visible');
+    elements.searchInput.focus();
+    renderCategoryNav();
+    renderBooks();
+  });
+
+  elements.onlyLinksCheckbox.addEventListener('change', (event) => {
+    state.onlyWithLinks = event.target.checked;
+    renderCategoryNav();
+    renderBooks();
+  });
+
+  init();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', bootstrap);
+} else {
+  bootstrap();
+}
+</script>
+</body>
+</html>
