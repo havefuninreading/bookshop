@@ -1,179 +1,1048 @@
-<!DOCTYPE html><html lang="zh-Hant">
-  <head>
-    <meta charSet="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;family=Noto+Serif+TC:wght@600;900&amp;display=swap" data-precedence="default"/>
-    <link rel="stylesheet" href="/assets/index-D0X_bpXu.css" data-precedence="default"/>
-    <title>分類書櫃</title>
-    <meta name="description" content="依類別瀏覽英文童書：幼兒繪本、名家繪本、卡通明星、科普、初階讀本、章節書與節慶選書，選一個類別就能看到所有書目。"/>
-    <meta property="og:title" content="分類書櫃"/>
-    <meta property="og:description" content="依類別瀏覽英文童書：幼兒繪本、名家繪本、卡通明星、科普、初階讀本、章節書與節慶選書，選一個類別就能看到所有書目。"/>
-    <meta property="og:type" content="website"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <link rel="modulepreload" href="/assets/index-DYb8zygI.js"/>
-    <link rel="modulepreload" href="/assets/routes-CCSSkBAr.js"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
-  </head>
-  <body>
-    <!--$-->
-    <div class="min-h-screen bg-background text-foreground">
-      <header class="border-b border-border">
-        <div class="mx-auto max-w-content px-4 sm:px-6 py-10 sm:py-14">
-          <p class="flex items-center gap-2 text-sm font-medium tracking-widest text-accent">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open size-4" aria-hidden="true">
-              <path d="M12 5v16">
-                
-              </path>
-              <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z">
-                
-              </path>
-            </svg>8<!-- --> 個類別 · <!-- -->92<!-- --> 本書</p>
-          <h1 class="mt-3 font-display text-4xl sm:text-6xl font-black tracking-tight text-primary">分類書櫃</h1>
-          <p class="mt-4 max-w-reading text-muted-foreground">選擇一個類別，即可列出該類別下的所有書籍。</p>
-        </div>
-      </header>
-      <main class="mx-auto max-w-content px-4 sm:px-6 py-8 sm:py-12 grid gap-8 md:grid-cols-[16rem_1fr]">
-        <nav aria-label="書籍類別"><h2 class="sr-only">類別</h2>
-          <ul class="flex gap-2 overflow-x-auto pb-2 md:flex-col md:overflow-visible md:pb-0">
-            <li class="shrink-0"><a aria-current="page" class="flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-primary bg-primary text-primary-foreground" href="/?c=%E5%B9%BC%E5%85%92%E7%B9%AA%E6%9C%AC%2F%E7%A7%91%E6%99%AE">
-              <span>幼兒繪本/科普</span>
-              <span class="rounded-full px-2 py-0.5 text-xs tabular-nums bg-primary-foreground/15">16</span>
-            </a>
-            </li>
-            <li class="shrink-0"><a class="flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-border bg-card hover:bg-secondary" href="/?c=%E5%90%8D%E5%AE%B6%E7%B9%AA%E6%9C%AC">
-              <span>名家繪本</span>
-              <span class="rounded-full px-2 py-0.5 text-xs tabular-nums bg-muted text-muted-foreground">19</span>
-            </a>
-            </li>
-            <li class="shrink-0"><a class="flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-border bg-card hover:bg-secondary" href="/?c=%E5%8D%A1%E9%80%9A%E6%98%8E%E6%98%9F">
-              <span>卡通明星</span>
-              <span class="rounded-full px-2 py-0.5 text-xs tabular-nums bg-muted text-muted-foreground">7</span>
-            </a>
-            </li>
-            <li class="shrink-0"><a class="flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-border bg-card hover:bg-secondary" href="/?c=%E7%A7%91%E6%99%AE">
-              <span>科普</span>
-              <span class="rounded-full px-2 py-0.5 text-xs tabular-nums bg-muted text-muted-foreground">7</span>
-            </a>
-            </li>
-            <li class="shrink-0"><a class="flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-border bg-card hover:bg-secondary" href="/?c=%E5%88%9D%E9%9A%8E%E8%AE%80%E6%9C%AC">
-              <span>初階讀本</span>
-              <span class="rounded-full px-2 py-0.5 text-xs tabular-nums bg-muted text-muted-foreground">10</span>
-            </a>
-            </li>
-            <li class="shrink-0"><a class="flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-border bg-card hover:bg-secondary" href="/?c=%E7%AB%A0%E7%AF%80%E6%9B%B8%2F%E5%9C%96%E5%83%8F%E6%9B%B8">
-              <span>章節書/圖像書</span>
-              <span class="rounded-full px-2 py-0.5 text-xs tabular-nums bg-muted text-muted-foreground">21</span>
-            </a>
-            </li>
-            <li class="shrink-0"><a class="flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-border bg-card hover:bg-secondary" href="/?c=%E8%81%96%E8%AA%95%E7%AF%80%26%E6%96%B0%E5%B9%B4">
-              <span>聖誕節&amp;新年</span>
-              <span class="rounded-full px-2 py-0.5 text-xs tabular-nums bg-muted text-muted-foreground">11</span>
-            </a>
-            </li>
-            <li class="shrink-0"><a class="flex items-center justify-between gap-3 rounded-lg border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-colors motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border-border bg-card hover:bg-secondary" href="/?c=%E5%B7%A5%E5%85%B7%E6%9B%B8">
-              <span>工具書</span>
-              <span class="rounded-full px-2 py-0.5 text-xs tabular-nums bg-muted text-muted-foreground">1</span>
-            </a>
-            </li>
-          </ul>
-        </nav>
-        <section aria-labelledby="category-title" class="min-w-0">
-          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between border-b-2 border-primary pb-4">
-            <div>
-              <h2 id="category-title" class="font-display text-2xl sm:text-3xl font-black">幼兒繪本/科普</h2>
-              <p class="mt-1 text-sm text-muted-foreground" aria-live="polite">共 16 本</p>
-            </div>
-            <div class="relative sm:w-64">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden="true">
-                <path d="m21 21-4.34-4.34">
-                  
-                </path>
-                <circle cx="11" cy="11" r="8">
-                  
-                </circle>
-              </svg>
-              <input type="search" data-slot="input" class="h-9 w-full min-w-0 rounded-md border border-input px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none selection:bg-primary selection:text-primary-foreground file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm dark:bg-input/30 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 pl-9 pr-9 bg-card" placeholder="在此類別中搜尋書名" aria-label="在此類別中搜尋書名" value=""/>
-            </div>
-          </div>
-          <ol class="divide-y divide-border">
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">1</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">How Does Caterplliar Change/BRD</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">2</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">How Does An Egg Hatch/BRD</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">3</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">How Does Seed Sprout/BRD</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">4</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">Why Does Wind Blow: Weather With Very Hungry Caterpillar/BRD</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">5</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">Why Does It Rain/Weather With The Very Hungry Caterpillar/BRD</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">6</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">Why Is It Hot?/Weather With The Very Hungry Caterpillar/BRD</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">7</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">Hungry Bunny/HC</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">8</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">Bunny Slopes/HC</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">9</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">Rainbow Chameleon/BRD(下RH)</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">10</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">Where Is Green Sheep /BRD</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">11</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">My Play Kitchen</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">12</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">My Lunch Box Play Book/BRD</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">13</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">Hello World Solar System/BRD</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">14</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">Hello World Ocean Life/BRD</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">15</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">Hello World Backyard Bugs /BRD</span>
-            </li>
-            <li class="flex items-baseline gap-4 py-3.5">
-              <span class="w-8 shrink-0 text-right font-display text-sm font-semibold tabular-nums text-accent">16</span>
-              <span class="min-w-0 break-words font-medium tracking-wide">Hello World 6-Book Set</span>
-            </li>
-          </ol>
-        </section>
-      </main>
-      <footer class="border-t border-border">
-        <p class="mx-auto max-w-content px-4 sm:px-6 py-6 text-xs text-muted-foreground">書目資料來源：分類書籍.xlsx</p>
-      </footer></div><script>(function(a,f){let l;try{l=JSON.parse(sessionStorage.getItem(a)||"{}")}catch{return}const n=l?.[f||history.state?.__TSR_key];let c=!1;for(const t in n){const e=n[t],o=e?.scrollX,s=e?.scrollY;if(Number.isFinite(o)&&Number.isFinite(s)){if(t==="window")scrollTo(o,s),c=!0;else if(t)try{const r=document.querySelector(t);r&&(r.scrollLeft=o,r.scrollTop=s)}catch{}}}if(c)return;const i=location.hash.slice(1);if(i){const t=history.state?.__hashScrollIntoViewOptions??!0;if(t){const e=document.getElementById(i);e&&e.scrollIntoView(t)}return}scrollTo(0,0)})("tsr-scroll-restoration-v1_3");document.currentScript.remove()
-      </script><!--/$--><section aria-label="Notifications alt+T" tabindex="-1" aria-live="polite" aria-relevant="additions text" aria-atomic="false" data-react-aria-top-layer="true">
-        
-      </section>
-    <script data-tsr-stream-part="">(self.$R=self.$R||{})["tsr"]=[];self.$_TSR={h(){this.hydrated=!0,this.c()},e(){this.streamEnded=!0,this.c()},c(){this.hydrated&&this.streamEnded&&(delete self.$_TSR,delete self.$R.tsr)},p(e){this.initialized?e():this.buffer.push(e)},buffer:[]};$_TSR.router=($R=>$R[0]={manifest:$R[1]={routes:$R[2]={__root__:$R[3]={preloads:$R[4]=["/assets/index-DYb8zygI.js"],scripts:$R[5]=[$R[6]={attrs:$R[7]={type:"module",async:!0,src:"/assets/index-DYb8zygI.js"}}],css:$R[8]=["/assets/index-D0X_bpXu.css"]},"/":$R[9]={preloads:$R[10]=["/assets/routes-CCSSkBAr.js"]}}},matches:$R[11]=[$R[12]={i:"__root__#",u:1792212040387,s:"success",ssr:!0},$R[13]={i:"##",u:1792212040387,s:"success",ssr:!0}]})($R["tsr"]);$_TSR.e();{let s=document.currentScript,p;while((p=s.previousElementSibling)&&p.hasAttribute('data-tsr-stream-part'))p.remove();s.remove()}</script>
-    <script type="module" async="" src="/assets/index-DYb8zygI.js"></script>
-    <script>document.currentScript.remove();/*$tsr-stream-boundary*/</script>
-  </body>
-</html>
-<script async src="/.netlify/scripts/ar" data-netlify-deploy-id="6ad2e8b5ca7444287acad6c2" data-netlify-site-id="ba8d8fcb-96e2-4887-9b29-5b162b9b5dc0" data-agent-runner-id="6ad2e640229fb86b11b15ced"></script>
-<script async src="/.netlify/scripts/hud?variant=owner-private" data-nf-variant="owner-private" data-netlify-site-id="ba8d8fcb-96e2-4887-9b29-5b162b9b5dc0" data-app-host="app.netlify.com"></script>
+<h1>&lt;!DOCTYPE html&gt;
+  <br>&lt;html lang="zh-Hant"&gt;
+  <br>&lt;head&gt;
+  <br>&lt;meta charset="UTF-8"&gt;
+  <br>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  <br>&lt;title&gt;書籍內文介紹 | 書單分類目錄&lt;/title&gt;
+  <br>&lt;meta name="description" content="依分類整理的英文繪本、讀本與章節書內文介紹目錄。"&gt;
+  <br>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+  <br>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+  <br>&lt;link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&amp;family=Noto+Sans+TC:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;
+  <br>&lt;style&gt;
+  <br>:root {
+  <br>--bg-page: #faf7f2;
+  <br>--bg-surface: #ffffff;
+  <br>--bg-subtle: #f3ede2;
+  <br>--bg-hover: #f7f2e9;
+  <br>--text-primary: #1f2421;
+  <br>--text-secondary: #5a625d;
+  <br>--text-muted: #878e88;
+  <br>--accent-primary: #b8522a;
+  <br>--accent-primary-hover: #963f1d;
+  <br>--accent-soft: #fbeee8;
+  <br>--accent-teal: #2b6758;
+  <br>--accent-teal-soft: #e6f2ee;
+  <br>--border-subtle: #e5dec9;
+  <br>--border-strong: #d2c8b0;
+  <br>--shadow-sm: 0 1px 3px rgba(31, 36, 33, 0.05), 0 1px 2px rgba(31, 36, 33, 0.03);
+  <br>--shadow-md: 0 6px 18px rgba(31, 36, 33, 0.07), 0 2px 6px rgba(31, 36, 33, 0.04);
+  <br>--radius-sm: 8px;
+  <br>--radius-md: 12px;
+  <br>--radius-lg: 16px;
+  <br>--font-sans: "Noto Sans TC", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  <br>--font-serif: "Newsreader", "Noto Serif TC", Georgia, serif;
+  <br>}
+  <br>
+  <br>* {
+  <br>box-sizing: border-box;
+  <br>margin: 0;
+  <br>padding: 0;
+  <br>}
+  <br>
+  <br>html {
+  <br>scroll-behavior: smooth;
+  <br>}
+  <br>
+  <br>body {
+  <br>font-family: var(--font-sans);
+  <br>background-color: var(--bg-page);
+  <br>color: var(--text-primary);
+  <br>line-height: 1.6;
+  <br>-webkit-font-smoothing: antialiased;
+  <br>min-height: 100vh;
+  <br>}
+  <br>
+  <br>/* Controls Bar */
+  <br>.controls-wrapper {
+  <br>position: sticky;
+  <br>top: 0;
+  <br>z-index: 20;
+  <br>background-color: rgba(250, 247, 242, 0.92);
+  <br>backdrop-filter: blur(10px);
+  <br>border-bottom: 1px solid var(--border-subtle);
+  <br>padding: 0.9rem 1.5rem;
+  <br>}
+  <br>
+  <br>.controls-inner {
+  <br>max-width: 1120px;
+  <br>margin: 0 auto;
+  <br>display: flex;
+  <br>flex-direction: column;
+  <br>gap: 0.85rem;
+  <br>}
+  <br>
+  <br>.search-row {
+  <br>display: flex;
+  <br>flex-wrap: wrap;
+  <br>align-items: center;
+  <br>justify-content: space-between;
+  <br>gap: 0.85rem;
+  <br>}
+  <br>
+  <br>.search-box {
+  <br>position: relative;
+  <br>flex: 1 1 280px;
+  <br>max-width: 460px;
+  <br>}
+  <br>
+  <br>.search-icon {
+  <br>position: absolute;
+  <br>left: 0.85rem;
+  <br>top: 50%;
+  <br>transform: translateY(-50%);
+  <br>width: 17px;
+  <br>height: 17px;
+  <br>color: var(--text-muted);
+  <br>pointer-events: none;
+  <br>}
+  <br>
+  <br>.search-input {
+  <br>width: 100%;
+  <br>padding: 0.6rem 2.2rem 0.6rem 2.5rem;
+  <br>font-size: 0.92rem;
+  <br>font-family: inherit;
+  <br>color: var(--text-primary);
+  <br>background-color: var(--bg-surface);
+  <br>border: 1px solid var(--border-strong);
+  <br>border-radius: var(--radius-sm);
+  <br>outline: none;
+  <br>transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  <br>}
+  <br>
+  <br>.search-input:focus {
+  <br>border-color: var(--accent-primary);
+  <br>box-shadow: 0 0 0 3px rgba(184, 82, 42, 0.14);
+  <br>}
+  <br>
+  <br>.clear-search-btn {
+  <br>position: absolute;
+  <br>right: 0.55rem;
+  <br>top: 50%;
+  <br>transform: translateY(-50%);
+  <br>border: none;
+  <br>background: transparent;
+  <br>color: var(--text-muted);
+  <br>cursor: pointer;
+  <br>padding: 0.2rem;
+  <br>display: none;
+  <br>line-height: 1;
+  <br>font-size: 1.1rem;
+  <br>}
+  <br>
+  <br>.clear-search-btn.visible {
+  <br>display: block;
+  <br>}
+  <br>
+  <br>.filter-meta-group {
+  <br>display: flex;
+  <br>align-items: center;
+  <br>gap: 1.1rem;
+  <br>flex-wrap: wrap;
+  <br>}
+  <br>
+  <br>.toggle-label {
+  <br>display: inline-flex;
+  <br>align-items: center;
+  <br>gap: 0.5rem;
+  <br>font-size: 0.88rem;
+  <br>color: var(--text-secondary);
+  <br>cursor: pointer;
+  <br>user-select: none;
+  <br>}
+  <br>
+  <br>.toggle-checkbox {
+  <br>width: 16px;
+  <br>height: 16px;
+  <br>accent-color: var(--accent-primary);
+  <br>cursor: pointer;
+  <br>}
+  <br>
+  <br>.stats-summary {
+  <br>font-size: 0.85rem;
+  <br>color: var(--text-secondary);
+  <br>background-color: var(--bg-subtle);
+  <br>padding: 0.3rem 0.7rem;
+  <br>border-radius: 999px;
+  <br>}
+  <br>
+  <br>/* Category Tabs */
+  <br>.category-nav {
+  <br>display: flex;
+  <br>flex-direction: column;
+  <br>gap: 0.5rem;
+  <br>}
+  <br>
+  <br>.category-nav-row {
+  <br>display: flex;
+  <br>flex-wrap: wrap;
+  <br>align-items: center;
+  <br>gap: 0.5rem;
+  <br>}
+  <br>
+  <br>.category-tab {
+  <br>display: inline-flex;
+  <br>align-items: center;
+  <br>gap: 0.4rem;
+  <br>padding: 0.42rem 0.85rem;
+  <br>font-size: 0.86rem;
+  <br>font-weight: 500;
+  <br>font-family: inherit;
+  <br>white-space: nowrap;
+  <br>border-radius: 999px;
+  <br>border: 1px solid var(--border-subtle);
+  <br>background-color: var(--bg-surface);
+  <br>color: var(--text-secondary);
+  <br>cursor: pointer;
+  <br>transition: all 0.15s ease;
+  <br>}
+  <br>
+  <br>.category-tab:hover {
+  <br>border-color: var(--border-strong);
+  <br>color: var(--text-primary);
+  <br>background-color: var(--bg-hover);
+  <br>}
+  <br>
+  <br>.category-tab.active {
+  <br>background-color: var(--text-primary);
+  <br>border-color: var(--text-primary);
+  <br>color: var(--bg-surface);
+  <br>}
+  <br>
+  <br>.category-tab .tab-count {
+  <br>font-size: 0.75rem;
+  <br>padding: 0.05rem 0.42rem;
+  <br>border-radius: 999px;
+  <br>background-color: var(--bg-subtle);
+  <br>color: var(--text-secondary);
+  <br>}
+  <br>
+  <br>.category-tab.active .tab-count {
+  <br>background-color: rgba(255, 255, 255, 0.2);
+  <br>color: #ffffff;
+  <br>}
+  <br>
+  <br>/* Main Content */
+  <br>.main-container {
+  <br>max-width: 1120px;
+  <br>margin: 0 auto;
+  <br>padding: 2rem 1.5rem 4rem;
+  <br>}
+  <br>
+  <br>.categories-list {
+  <br>display: flex;
+  <br>flex-direction: column;
+  <br>gap: 2.25rem;
+  <br>}
+  <br>
+  <br>.category-section {
+  <br>background-color: var(--bg-surface);
+  <br>border: 1px solid var(--border-subtle);
+  <br>border-radius: var(--radius-lg);
+  <br>box-shadow: var(--shadow-sm);
+  <br>overflow: hidden;
+  <br>}
+  <br>
+  <br>.category-header {
+  <br>display: flex;
+  <br>align-items: baseline;
+  <br>justify-content: space-between;
+  <br>flex-wrap: wrap;
+  <br>gap: 0.5rem;
+  <br>padding: 1.15rem 1.5rem;
+  <br>background-color: var(--bg-subtle);
+  <br>border-bottom: 1px solid var(--border-subtle);
+  <br>}
+  <br>
+  <br>.category-title {
+  <br>font-size: 1.2rem;
+  <br>font-weight: 700;
+  <br>color: var(--text-primary);
+  <br>display: flex;
+  <br>align-items: center;
+  <br>gap: 0.6rem;
+  <br>}
+  <br>
+  <br>.category-marker {
+  <br>display: inline-block;
+  <br>width: 6px;
+  <br>height: 18px;
+  <br>border-radius: 3px;
+  <br>background-color: var(--accent-primary);
+  <br>}
+  <br>
+  <br>.category-meta {
+  <br>font-size: 0.82rem;
+  <br>color: var(--text-secondary);
+  <br>}
+  <br>
+  <br>.book-list {
+  <br>list-style: none;
+  <br>display: grid;
+  <br>grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  <br>gap: 1px;
+  <br>background-color: var(--border-subtle);
+  <br>}
+  <br>
+  <br>.book-item {
+  <br>background-color: var(--bg-surface);
+  <br>display: flex;
+  <br>}
+  <br>
+  <br>.book-card {
+  <br>display: flex;
+  <br>align-items: center;
+  <br>justify-content: space-between;
+  <br>gap: 0.95rem;
+  <br>width: 100%;
+  <br>padding: 0.85rem 1.25rem;
+  <br>text-decoration: none;
+  <br>color: inherit;
+  <br>transition: background-color 0.15s ease;
+  <br>}
+  <br>
+  <br>.book-cover-wrap {
+  <br>width: 60px;
+  <br>height: 76px;
+  <br>flex-shrink: 0;
+  <br>border-radius: 6px;
+  <br>background-color: var(--bg-subtle);
+  <br>border: 1px solid var(--border-subtle);
+  <br>box-shadow: 0 2px 6px rgba(31, 36, 33, 0.08);
+  <br>display: flex;
+  <br>align-items: center;
+  <br>justify-content: center;
+  <br>overflow: hidden;
+  <br>position: relative;
+  <br>}
+  <br>
+  <br>.book-cover-img {
+  <br>width: 100%;
+  <br>height: 100%;
+  <br>object-fit: contain;
+  <br>display: block;
+  <br>background-color: #ffffff;
+  <br>transition: transform 0.2s ease;
+  <br>}
+  <br>
+  <br>a.book-card:hover .book-cover-img {
+  <br>transform: scale(1.04);
+  <br>}
+  <br>
+  <br>.book-cover-placeholder {
+  <br>width: 22px;
+  <br>height: 22px;
+  <br>color: var(--text-muted);
+  <br>opacity: 0.55;
+  <br>}
+  <br>
+  <br>a.book-card:hover {
+  <br>background-color: var(--bg-hover);
+  <br>}
+  <br>
+  <br>a.book-card:hover .book-title {
+  <br>color: var(--accent-primary);
+  <br>}
+  <br>
+  <br>a.book-card:hover .link-badge {
+  <br>background-color: var(--accent-primary);
+  <br>color: #ffffff;
+  <br>}
+  <br>
+  <br>.book-info {
+  <br>min-width: 0;
+  <br>flex: 1;
+  <br>}
+  <br>
+  <br>.book-title {
+  <br>font-family: var(--font-serif);
+  <br>font-size: 1.03rem;
+  <br>font-weight: 500;
+  <br>color: var(--text-primary);
+  <br>line-height: 1.4;
+  <br>word-break: break-word;
+  <br>transition: color 0.15s ease;
+  <br>}
+  <br>
+  <br>.link-badge {
+  <br>display: inline-flex;
+  <br>align-items: center;
+  <br>gap: 0.3rem;
+  <br>flex-shrink: 0;
+  <br>padding: 0.32rem 0.68rem;
+  <br>font-size: 0.78rem;
+  <br>font-weight: 600;
+  <br>border-radius: var(--radius-sm);
+  <br>background-color: var(--accent-soft);
+  <br>color: var(--accent-primary);
+  <br>transition: background-color 0.15s ease, color 0.15s ease;
+  <br>}
+  <br>
+  <br>.no-link-badge {
+  <br>display: inline-flex;
+  <br>align-items: center;
+  <br>flex-shrink: 0;
+  <br>padding: 0.28rem 0.6rem;
+  <br>font-size: 0.75rem;
+  <br>color: var(--text-muted);
+  <br>background-color: var(--bg-page);
+  <br>border: 1px solid var(--border-subtle);
+  <br>border-radius: var(--radius-sm);
+  <br>}
+  <br>
+  <br>/* Status &amp; Empty States */
+  <br>.status-box {
+  <br>background-color: var(--bg-surface);
+  <br>border: 1px solid var(--border-subtle);
+  <br>border-radius: var(--radius-lg);
+  <br>padding: 3rem 1.5rem;
+  <br>text-align: center;
+  <br>box-shadow: var(--shadow-sm);
+  <br>}
+  <br>
+  <br>.status-title {
+  <br>font-size: 1.1rem;
+  <br>font-weight: 600;
+  <br>color: var(--text-primary);
+  <br>margin-bottom: 0.4rem;
+  <br>}
+  <br>
+  <br>.status-desc {
+  <br>font-size: 0.9rem;
+  <br>color: var(--text-secondary);
+  <br>}
+  <br>
+  <br>.spinner {
+  <br>width: 32px;
+  <br>height: 32px;
+  <br>border: 3px solid var(--border-subtle);
+  <br>border-top-color: var(--accent-primary);
+  <br>border-radius: 50%;
+  <br>margin: 0 auto 1rem;
+  <br>animation: spin 0.8s linear infinite;
+  <br>}
+  <br>
+  <br>@keyframes spin {
+  <br>to {
+  <br>transform: rotate(360deg);
+  <br>}
+  <br>}
+  <br>
+  <br>.error-box {
+  <br>border-color: #e4b4a6;
+  <br>background-color: #fff8f6;
+  <br>}
+  <br>
+  <br>@media (max-width: 640px) {
+  <br>.controls-wrapper {
+  <br>padding: 0.75rem 1rem;
+  <br>}
+  <br>
+  <br>.main-container {
+  <br>padding: 1.25rem 1rem 3rem;
+  <br>}
+  <br>
+  <br>.category-header {
+  <br>padding: 0.95rem 1.1rem;
+  <br>}
+  <br>
+  <br>.book-list {
+  <br>grid-template-columns: 1fr;
+  <br>}
+  <br>
+  <br>.book-card {
+  <br>padding: 0.85rem 1.1rem;
+  <br>}
+  <br>}
+  <br>&lt;/style&gt;
+  <br>&lt;/head&gt;
+  <br>&lt;body&gt;
+  <br>&lt;div class="controls-wrapper"&gt;
+  <br>&lt;div class="controls-inner"&gt;
+  <br>&lt;div class="search-row"&gt;
+  <br>&lt;div class="search-box"&gt;
+  <br>&lt;svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"&gt;
+  <br>&lt;circle cx="11" cy="11" r="8"&gt;&lt;/circle&gt;
+  <br>&lt;line x1="21" y1="21" x2="16.65" y2="16.65"&gt;&lt;/line&gt;
+  <br>&lt;/svg&gt;
+  <br>&lt;input id="search-input" class="search-input" type="search" placeholder="搜尋書名或分類..." autocomplete="off"&gt;
+  <br>&lt;button id="clear-search-btn" class="clear-search-btn" type="button" aria-label="清除搜尋"&gt;&amp;times;&lt;/button&gt;
+  <br>&lt;/div&gt;
+  <br>
+  <br>&lt;div class="filter-meta-group"&gt;
+  <br>&lt;label class="toggle-label" for="only-links-checkbox"&gt;
+  <br>&lt;input id="only-links-checkbox" class="toggle-checkbox" type="checkbox"&gt;
+  <br>僅顯示有介紹連結的書籍
+  <br>&lt;/label&gt;
+  <br>&lt;span id="stats-summary" class="stats-summary" aria-live="polite"&gt;載入中...&lt;/span&gt;
+  <br>&lt;/div&gt;
+  <br>&lt;/div&gt;
+  <br>
+  <br>&lt;nav id="category-nav" class="category-nav" aria-label="書籍分類篩選"&gt;&lt;/nav&gt;
+  <br>&lt;/div&gt;
+  <br>&lt;/div&gt;
+  <br>
+  <br>&lt;main class="main-container"&gt;
+  <br>&lt;div id="content-area"&gt;
+  <br>&lt;div class="status-box" role="status"&gt;
+  <br>&lt;div class="spinner" aria-hidden="true"&gt;&lt;/div&gt;
+  <br>&lt;p class="status-title"&gt;正在讀取書單資料...&lt;/p&gt;
+  <br>&lt;p class="status-desc"&gt;正從線上書單同步最新分類與書籍連結&lt;/p&gt;
+  <br>&lt;/div&gt;
+  <br>&lt;/div&gt;
+  <br>&lt;/main&gt;
+  <br>
+  <br>&lt;script&gt;
+  <br>/**
+  <br>* Google Sheet 設定
+  <br>* 請確保該 Google Sheet 已開啟「知道連結的任何人都能檢視」權限。
+  <br>*
+  <br>* 欄位對應：
+  <br>* - Column A：分類（空白時自動沿用上一列分類）
+  <br>* - Column B：書名
+  <br>* - Column C：書籍介紹連結
+  <br>* - Column D：書籍封面圖片網址（空白時自動查詢 Open Library 作為備援）
+  <br>*/
+  <br>const SPREADSHEET_ID = '12zw_Tm9rmINLc6dT9lll9TvsJXzu95TxymGQz9bRYUw';
+  <br>const SHEET_NAME = 'SALE-LIST';
+  <br>const CATEGORY_NAV_ROWS = 2;
+  <br>
+  <br>const dynamicCoverCache = new Map();
+  <br>
+  <br>const state = {
+  <br>categories: [],
+  <br>activeCategory: 'ALL',
+  <br>searchQuery: '',
+  <br>onlyWithLinks: false,
+  <br>};
+  <br>
+  <br>let elements = {};
+  <br>
+  <br>function buildGvizUrl(tqxParam) {
+  <br>const base = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq`;
+  <br>const params = new URLSearchParams({
+  <br>tqx: tqxParam,
+  <br>sheet: SHEET_NAME,
+  <br>});
+  <br>return `${base}?${params.toString()}`;
+  <br>}
+  <br>
+  <br>function parseGvizResponseText(rawText) {
+  <br>const startIdx = rawText.indexOf('{');
+  <br>const endIdx = rawText.lastIndexOf('}');
+  <br>if (startIdx === -1 || endIdx === -1 || endIdx &lt;= startIdx) {
+  <br>throw new Error('無法解析 Google Sheet 回傳的資料格式。');
+  <br>}
+  <br>return JSON.parse(rawText.slice(startIdx, endIdx + 1));
+  <br>}
+  <br>
+  <br>function fetchViaJsonp() {
+  <br>return new Promise((resolve, reject) =&gt; {
+  <br>const callbackName = `gvizCallback_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
+  <br>const script = document.createElement('script');
+  <br>const timeoutId = window.setTimeout(() =&gt; {
+  <br>cleanup();
+  <br>reject(new Error('讀取 Google Sheet 逾時，請檢查網路連線或試算表權限。'));
+  <br>}, 12000);
+  <br>
+  <br>function cleanup() {
+  <br>window.clearTimeout(timeoutId);
+  <br>delete window[callbackName];
+  <br>if (script.parentNode) {
+  <br>script.parentNode.removeChild(script);
+  <br>}
+  <br>}
+  <br>
+  <br>window[callbackName] = (data) =&gt; {
+  <br>cleanup();
+  <br>resolve(data);
+  <br>};
+  <br>
+  <br>script.src = buildGvizUrl(`responseHandler:${callbackName}`);
+  <br>script.onerror = () =&gt; {
+  <br>cleanup();
+  <br>reject(new Error('無法載入 Google Sheet 資料，請確認試算表已開啟檢視權限。'));
+  <br>};
+  <br>
+  <br>document.head.appendChild(script);
+  <br>});
+  <br>}
+  <br>
+  <br>async function fetchSheetData() {
+  <br>if (window.location.protocol === 'file:') {
+  <br>return fetchViaJsonp();
+  <br>}
+  <br>
+  <br>try {
+  <br>const response = await fetch(buildGvizUrl('out:json'), { cache: 'no-store' });
+  <br>if (!response.ok) {
+  <br>throw new Error(`HTTP 錯誤 (${response.status})`);
+  <br>}
+  <br>const text = await response.text();
+  <br>return parseGvizResponseText(text);
+  <br>} catch (err) {
+  <br>return fetchViaJsonp();
+  <br>}
+  <br>}
+  <br>
+  <br>function getCellValue(row, colIndex) {
+  <br>const cell = row?.c?.[colIndex];
+  <br>if (!cell || cell.v === null || cell.v === undefined) {
+  <br>return '';
+  <br>}
+  <br>return String(cell.v).trim();
+  <br>}
+  <br>
+  <br>function normalizeUrl(rawUrl) {
+  <br>if (!rawUrl) return '';
+  <br>try {
+  <br>const parsed = new URL(rawUrl);
+  <br>if (parsed.protocol === 'http:' || parsed.protocol === 'https:') {
+  <br>return parsed.href;
+  <br>}
+  <br>return '';
+  <br>} catch {
+  <br>return '';
+  <br>}
+  <br>}
+  <br>
+  <br>function cleanQueryTitle(title) {
+  <br>return title
+  <br>.replace(/\bICR\s*:?\s*/gi, 'I Can Read ')
+  <br>.replace(/\/\s*My First\b/gi, ' My First')
+  <br>.replace(/\/\s*HC\b/gi, '')
+  <br>.replace(/#0?(\d+)/g, ' $1 ')
+  <br>.replace(/[:/]/g, ' ')
+  <br>.replace(/\s+/g, ' ')
+  <br>.trim();
+  <br>}
+  <br>
+  <br>async function fetchFallbackCover(title) {
+  <br>const lower = title.trim().toLowerCase();
+  <br>if (dynamicCoverCache.has(lower)) {
+  <br>return dynamicCoverCache.get(lower);
+  <br>}
+  <br>dynamicCoverCache.set(lower, null);
+  <br>
+  <br>try {
+  <br>const q = encodeURIComponent(cleanQueryTitle(title));
+  <br>const res = await fetch(`https://openlibrary.org/search.json?limit=1&amp;q=${q}`);
+  <br>if (!res.ok) return null;
+  <br>const data = await res.json();
+  <br>const coverId = data?.docs?.[0]?.cover_i;
+  <br>if (coverId) {
+  <br>const url = `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`;
+  <br>dynamicCoverCache.set(lower, url);
+  <br>return url;
+  <br>}
+  <br>} catch {
+  <br>// Ignore fallback lookup errors silently
+  <br>}
+  <br>return null;
+  <br>}
+  <br>
+  <br>function parseRowsToCategories(gvizData) {
+  <br>if (gvizData?.status === 'error') {
+  <br>const message = gvizData.errors?.[0]?.detailed_message || 'Google Sheet 回傳錯誤';
+  <br>throw new Error(message);
+  <br>}
+  <br>
+  <br>const rows = gvizData?.table?.rows || [];
+  <br>const categoryMap = new Map();
+  <br>const categories = [];
+  <br>let currentCategoryName = '未分類';
+  <br>
+  <br>rows.forEach((row, index) =&gt; {
+  <br>const colA = getCellValue(row, 0);
+  <br>const colB = getCellValue(row, 1);
+  <br>const colC = getCellValue(row, 2);
+  <br>const colD = getCellValue(row, 3);
+  <br>
+  <br>// 略過表頭列
+  <br>if (index === 0 &amp;&amp; (colA === '類別' || colB === '書名')) {
+  <br>return;
+  <br>}
+  <br>
+  <br>// 略過完全空白列
+  <br>if (!colA &amp;&amp; !colB) {
+  <br>return;
+  <br>}
+  <br>
+  <br>// Column A 有值時更新目前分類；空白時沿用上一個分類
+  <br>if (colA) {
+  <br>currentCategoryName = colA;
+  <br>}
+  <br>
+  <br>// 確保分類物件存在
+  <br>if (!categoryMap.has(currentCategoryName)) {
+  <br>const catObj = {
+  <br>name: currentCategoryName,
+  <br>books: [],
+  <br>};
+  <br>categoryMap.set(currentCategoryName, catObj);
+  <br>categories.push(catObj);
+  <br>}
+  <br>
+  <br>// Column B 有書名時加入該分類清單，並讀取 Column D 封面網址
+  <br>if (colB) {
+  <br>const sheetCover = normalizeUrl(colD);
+  <br>const cachedCover = dynamicCoverCache.get(colB.trim().toLowerCase()) || '';
+  <br>categoryMap.get(currentCategoryName).books.push({
+  <br>title: colB,
+  <br>url: normalizeUrl(colC),
+  <br>coverUrl: sheetCover || cachedCover,
+  <br>});
+  <br>}
+  <br>});
+  <br>
+  <br>return categories;
+  <br>}
+  <br>
+  <br>function getFilteredCategories() {
+  <br>const query = state.searchQuery.trim().toLowerCase();
+  <br>
+  <br>return state.categories
+  <br>.filter((cat) =&gt; state.activeCategory === 'ALL' || cat.name === state.activeCategory)
+  <br>.map((cat) =&gt; {
+  <br>const categoryMatchesQuery = query &amp;&amp; cat.name.toLowerCase().includes(query);
+  <br>const filteredBooks = cat.books.filter((book) =&gt; {
+  <br>if (state.onlyWithLinks &amp;&amp; !book.url) {
+  <br>return false;
+  <br>}
+  <br>if (!query || categoryMatchesQuery) {
+  <br>return true;
+  <br>}
+  <br>return book.title.toLowerCase().includes(query);
+  <br>});
+  <br>
+  <br>return {
+  <br>name: cat.name,
+  <br>books: filteredBooks,
+  <br>};
+  <br>})
+  <br>.filter((cat) =&gt; cat.books.length &gt; 0);
+  <br>}
+  <br>
+  <br>function renderCategoryNav() {
+  <br>const nav = elements.categoryNav;
+  <br>nav.textContent = '';
+  <br>
+  <br>const query = state.searchQuery.trim().toLowerCase();
+  <br>const countBookMatch = (cat) =&gt; {
+  <br>const categoryMatchesQuery = query &amp;&amp; cat.name.toLowerCase().includes(query);
+  <br>return cat.books.filter((book) =&gt; {
+  <br>if (state.onlyWithLinks &amp;&amp; !book.url) return false;
+  <br>if (!query || categoryMatchesQuery) return true;
+  <br>return book.title.toLowerCase().includes(query);
+  <br>}).length;
+  <br>};
+  <br>
+  <br>const totalCount = state.categories.reduce((sum, cat) =&gt; sum + countBookMatch(cat), 0);
+  <br>const tabs = [createCategoryTab('ALL', '全部類別', totalCount)];
+  <br>
+  <br>state.categories.forEach((cat) =&gt; {
+  <br>const count = countBookMatch(cat);
+  <br>tabs.push(createCategoryTab(cat.name, cat.name, count));
+  <br>});
+  <br>
+  <br>let startIndex = 0;
+  <br>for (let i = 0; i &lt; CATEGORY_NAV_ROWS; i++) {
+  <br>const size =
+  <br>Math.floor(tabs.length / CATEGORY_NAV_ROWS) +
+  <br>(i &lt; tabs.length % CATEGORY_NAV_ROWS ? 1 : 0);
+  <br>const rowItems = tabs.slice(startIndex, startIndex + size);
+  <br>startIndex += size;
+  <br>
+  <br>if (rowItems.length === 0) continue;
+  <br>
+  <br>const rowDiv = document.createElement('div');
+  <br>rowDiv.className = 'category-nav-row';
+  <br>rowItems.forEach((tab) =&gt; rowDiv.appendChild(tab));
+  <br>nav.appendChild(rowDiv);
+  <br>}
+  <br>}
+  <br>
+  <br>function createCategoryTab(value, label, count) {
+  <br>const btn = document.createElement('button');
+  <br>btn.type = 'button';
+  <br>btn.className = `category-tab${state.activeCategory === value ? ' active' : ''}`;
+  <br>btn.addEventListener('click', () =&gt; {
+  <br>state.activeCategory = value;
+  <br>renderCategoryNav();
+  <br>renderBooks();
+  <br>});
+  <br>
+  <br>const textSpan = document.createElement('span');
+  <br>textSpan.textContent = label;
+  <br>
+  <br>const countSpan = document.createElement('span');
+  <br>countSpan.className = 'tab-count';
+  <br>countSpan.textContent = String(count);
+  <br>
+  <br>btn.appendChild(textSpan);
+  <br>btn.appendChild(countSpan);
+  <br>return btn;
+  <br>}
+  <br>
+  <br>function renderBooks() {
+  <br>const filteredCategories = getFilteredCategories();
+  <br>const totalBooksShown = filteredCategories.reduce((sum, cat) =&gt; sum + cat.books.length, 0);
+  <br>const totalWithLinksShown = filteredCategories.reduce(
+  <br>(sum, cat) =&gt; sum + cat.books.filter((b) =&gt; Boolean(b.url)).length,
+  <br>0
+  <br>);
+  <br>
+  <br>elements.statsSummary.textContent = `共 ${filteredCategories.length} 個分類・${totalBooksShown} 本書（${totalWithLinksShown} 本含介紹連結）`;
+  <br>
+  <br>const container = elements.contentArea;
+  <br>container.textContent = '';
+  <br>
+  <br>if (filteredCategories.length === 0) {
+  <br>const emptyBox = document.createElement('div');
+  <br>emptyBox.className = 'status-box';
+  <br>
+  <br>const title = document.createElement('p');
+  <br>title.className = 'status-title';
+  <br>title.textContent = '找不到符合條件的書籍';
+  <br>
+  <br>const desc = document.createElement('p');
+  <br>desc.className = 'status-desc';
+  <br>desc.textContent = '請嘗試清除搜尋關鍵字或切換其他分類。';
+  <br>
+  <br>emptyBox.appendChild(title);
+  <br>emptyBox.appendChild(desc);
+  <br>container.appendChild(emptyBox);
+  <br>return;
+  <br>}
+  <br>
+  <br>const listWrapper = document.createElement('div');
+  <br>listWrapper.className = 'categories-list';
+  <br>
+  <br>filteredCategories.forEach((cat) =&gt; {
+  <br>const section = document.createElement('section');
+  <br>section.className = 'category-section';
+  <br>
+  <br>const header = document.createElement('div');
+  <br>header.className = 'category-header';
+  <br>
+  <br>const titleEl = document.createElement('h2');
+  <br>titleEl.className = 'category-title';
+  <br>
+  <br>const marker = document.createElement('span');
+  <br>marker.className = 'category-marker';
+  <br>marker.setAttribute('aria-hidden', 'true');
+  <br>
+  <br>const titleText = document.createElement('span');
+  <br>titleText.textContent = cat.name;
+  <br>
+  <br>titleEl.appendChild(marker);
+  <br>titleEl.appendChild(titleText);
+  <br>
+  <br>const linkedCount = cat.books.filter((b) =&gt; Boolean(b.url)).length;
+  <br>const metaEl = document.createElement('span');
+  <br>metaEl.className = 'category-meta';
+  <br>metaEl.textContent = `${cat.books.length} 本書・${linkedCount} 篇介紹`;
+  <br>
+  <br>header.appendChild(titleEl);
+  <br>header.appendChild(metaEl);
+  <br>
+  <br>const ul = document.createElement('ul');
+  <br>ul.className = 'book-list';
+  <br>
+  <br>cat.books.forEach((book) =&gt; {
+  <br>const li = document.createElement('li');
+  <br>li.className = 'book-item';
+  <br>li.appendChild(createBookCard(book));
+  <br>ul.appendChild(li);
+  <br>});
+  <br>
+  <br>section.appendChild(header);
+  <br>section.appendChild(ul);
+  <br>listWrapper.appendChild(section);
+  <br>});
+  <br>
+  <br>container.appendChild(listWrapper);
+  <br>}
+  <br>
+  <br>function createPlaceholderIcon() {
+  <br>const svgNS = 'http://www.w3.org/2000/svg';
+  <br>const svg = document.createElementNS(svgNS, 'svg');
+  <br>svg.setAttribute('class', 'book-cover-placeholder');
+  <br>svg.setAttribute('viewBox', '0 0 24 24');
+  <br>svg.setAttribute('fill', 'none');
+  <br>svg.setAttribute('stroke', 'currentColor');
+  <br>svg.setAttribute('stroke-width', '1.8');
+  <br>svg.setAttribute('stroke-linecap', 'round');
+  <br>svg.setAttribute('stroke-linejoin', 'round');
+  <br>svg.setAttribute('aria-hidden', 'true');
+  <br>
+  <br>const path1 = document.createElementNS(svgNS, 'path');
+  <br>path1.setAttribute('d', 'M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20');
+  <br>svg.appendChild(path1);
+  <br>return svg;
+  <br>}
+  <br>
+  <br>function attachCoverImage(coverWrap, url, title) {
+  <br>const img = document.createElement('img');
+  <br>img.className = 'book-cover-img';
+  <br>img.src = url;
+  <br>img.alt = `${title} 封面`;
+  <br>img.loading = 'lazy';
+  <br>img.decoding = 'async';
+  <br>img.referrerPolicy = 'no-referrer';
+  <br>
+  <br>img.onerror = () =&gt; {
+  <br>coverWrap.textContent = '';
+  <br>coverWrap.appendChild(createPlaceholderIcon());
+  <br>};
+  <br>
+  <br>coverWrap.textContent = '';
+  <br>coverWrap.appendChild(img);
+  <br>}
+  <br>
+  <br>function createBookCard(book) {
+  <br>const card = book.url ? document.createElement('a') : document.createElement('div');
+  <br>card.className = 'book-card';
+  <br>
+  <br>if (book.url) {
+  <br>card.href = book.url;
+  <br>card.target = '_blank';
+  <br>card.rel = 'noopener noreferrer';
+  <br>}
+  <br>
+  <br>const coverWrap = document.createElement('div');
+  <br>coverWrap.className = 'book-cover-wrap';
+  <br>
+  <br>if (book.coverUrl) {
+  <br>attachCoverImage(coverWrap, book.coverUrl, book.title);
+  <br>} else {
+  <br>coverWrap.appendChild(createPlaceholderIcon());
+  <br>fetchFallbackCover(book.title).then((foundUrl) =&gt; {
+  <br>if (foundUrl) {
+  <br>book.coverUrl = foundUrl;
+  <br>attachCoverImage(coverWrap, foundUrl, book.title);
+  <br>}
+  <br>});
+  <br>}
+  <br>
+  <br>card.appendChild(coverWrap);
+  <br>
+  <br>const infoDiv = document.createElement('div');
+  <br>infoDiv.className = 'book-info';
+  <br>
+  <br>const titleP = document.createElement('p');
+  <br>titleP.className = 'book-title';
+  <br>titleP.textContent = book.title;
+  <br>infoDiv.appendChild(titleP);
+  <br>
+  <br>card.appendChild(infoDiv);
+  <br>
+  <br>if (book.url) {
+  <br>const badge = document.createElement('span');
+  <br>badge.className = 'link-badge';
+  <br>badge.textContent = '閱讀介紹 ↗';
+  <br>card.appendChild(badge);
+  <br>} else {
+  <br>const noLink = document.createElement('span');
+  <br>noLink.className = 'no-link-badge';
+  <br>noLink.textContent = '尚無連結';
+  <br>card.appendChild(noLink);
+  <br>}
+  <br>
+  <br>return card;
+  <br>}
+  <br>
+  <br>function renderLoading() {
+  <br>elements.statsSummary.textContent = '讀取中...';
+  <br>elements.contentArea.innerHTML = `
+  <br>&lt;div class="status-box" role="status"&gt;
+  <br>&lt;div class="spinner" aria-hidden="true"&gt;&lt;/div&gt;
+  <br>&lt;p class="status-title"&gt;正在讀取書單資料...&lt;/p&gt;
+  <br>&lt;p class="status-desc"&gt;正從線上書單同步最新分類與書籍連結&lt;/p&gt;
+  <br>&lt;/div&gt;
+  <br>`;
+  <br>}
+  <br>
+  <br>function renderError(message) {
+  <br>elements.statsSummary.textContent = '讀取失敗';
+  <br>const box = document.createElement('div');
+  <br>box.className = 'status-box error-box';
+  <br>
+  <br>const title = document.createElement('p');
+  <br>title.className = 'status-title';
+  <br>title.textContent = '無法讀取 Google Sheet 資料';
+  <br>
+  <br>const desc = document.createElement('p');
+  <br>desc.className = 'status-desc';
+  <br>desc.textContent = message;
+  <br>
+  <br>box.appendChild(title);
+  <br>box.appendChild(desc);
+  <br>
+  <br>elements.contentArea.textContent = '';
+  <br>elements.contentArea.appendChild(box);
+  <br>}
+  <br>
+  <br>async function init() {
+  <br>renderLoading();
+  <br>try {
+  <br>const rawData = await fetchSheetData();
+  <br>state.categories = parseRowsToCategories(rawData);
+  <br>
+  <br>if (
+  <br>state.activeCategory !== 'ALL' &amp;&amp;
+  <br>!state.categories.some((cat) =&gt; cat.name === state.activeCategory)
+  <br>) {
+  <br>state.activeCategory = 'ALL';
+  <br>}
+  <br>
+  <br>renderCategoryNav();
+  <br>renderBooks();
+  <br>} catch (err) {
+  <br>renderError(err instanceof Error ? err.message : '發生未知錯誤，請稍後再試。');
+  <br>}
+  <br>}
+  <br>
+  <br>function bootstrap() {
+  <br>elements = {
+  <br>contentArea: document.getElementById('content-area'),
+  <br>categoryNav: document.getElementById('category-nav'),
+  <br>searchInput: document.getElementById('search-input'),
+  <br>clearSearchBtn: document.getElementById('clear-search-btn'),
+  <br>onlyLinksCheckbox: document.getElementById('only-links-checkbox'),
+  <br>statsSummary: document.getElementById('stats-summary'),
+  <br>};
+  <br>
+  <br>elements.searchInput.addEventListener('input', (event) =&gt; {
+  <br>state.searchQuery = event.target.value;
+  <br>elements.clearSearchBtn.classList.toggle('visible', state.searchQuery.length &gt; 0);
+  <br>renderCategoryNav();
+  <br>renderBooks();
+  <br>});
+  <br>
+  <br>elements.clearSearchBtn.addEventListener('click', () =&gt; {
+  <br>state.searchQuery = '';
+  <br>elements.searchInput.value = '';
+  <br>elements.clearSearchBtn.classList.remove('visible');
+  <br>elements.searchInput.focus();
+  <br>renderCategoryNav();
+  <br>renderBooks();
+  <br>});
+  <br>
+  <br>elements.onlyLinksCheckbox.addEventListener('change', (event) =&gt; {
+  <br>state.onlyWithLinks = event.target.checked;
+  <br>renderCategoryNav();
+  <br>renderBooks();
+  <br>});
+  <br>
+  <br>init();
+  <br>}
+  <br>
+  <br>if (document.readyState === 'loading') {
+  <br>document.addEventListener('DOMContentLoaded', bootstrap);
+  <br>} else {
+  <br>bootstrap();
+  <br>}
+  <br>&lt;/script&gt;
+  <br>&lt;/body&gt;
+  <br>&lt;/html&gt;
+</h1>
