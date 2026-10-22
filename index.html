@@ -648,22 +648,18 @@ function parseRowsToCategories(gvizData) {
     const colC = getCellValue(row, 2);
     const colD = getCellValue(row, 3);
 
-    // 略過表頭列
     if (index === 0 && (colA === '類別' || colB === '書名')) {
       return;
     }
 
-    // 略過完全空白列
     if (!colA && !colB) {
       return;
     }
 
-    // Column A 有值時更新目前分類；空白時沿用上一個分類
     if (colA) {
       currentCategoryName = colA;
     }
 
-    // 確保分類物件存在
     if (!categoryMap.has(currentCategoryName)) {
       const catObj = {
         name: currentCategoryName,
@@ -673,7 +669,6 @@ function parseRowsToCategories(gvizData) {
       categories.push(catObj);
     }
 
-    // Column B 有書名時加入該分類清單，並讀取 Column D 封面網址
     if (colB) {
       const sheetCover = normalizeUrl(colD);
       const cachedCover = dynamicCoverCache.get(colB.trim().toLowerCase()) || '';
