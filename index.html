@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>薑讀繪本 | 書單分類及介紹</title>
+  <title>書籍內文介紹 | 書單分類目錄</title>
   <meta name="description" content="依分類整理的英文繪本、讀本與章節書內文介紹目錄。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -324,7 +324,7 @@ body {
   transition: transform 0.2s ease;
 }
 
-a.book-card:hover .book-cover-img {
+.book-card.has-link:hover .book-cover-img {
   transform: scale(1.04);
 }
 
@@ -335,15 +335,16 @@ a.book-card:hover .book-cover-img {
   opacity: 0.55;
 }
 
-a.book-card:hover {
+.book-card.has-link:hover {
   background-color: var(--bg-hover);
 }
 
-a.book-card:hover .book-title {
+.book-card.has-link:hover .book-title {
   color: var(--accent-primary);
 }
 
-a.book-card:hover .link-badge {
+.link-badge:hover,
+.link-badge:focus-visible {
   background-color: var(--accent-primary);
   color: #ffffff;
 }
@@ -363,30 +364,28 @@ a.book-card:hover .link-badge {
   transition: color 0.15s ease;
 }
 
+.link-badge-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
 .link-badge {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.3rem;
   flex-shrink: 0;
   padding: 0.32rem 0.68rem;
   font-size: 0.78rem;
   font-weight: 600;
+  text-decoration: none;
   border-radius: var(--radius-sm);
   background-color: var(--accent-soft);
   color: var(--accent-primary);
   transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.no-link-badge {
-  display: inline-flex;
-  align-items: center;
-  flex-shrink: 0;
-  padding: 0.28rem 0.6rem;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  background-color: var(--bg-page);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
 }
 
 /* Status & Empty States */
@@ -453,7 +452,7 @@ a.book-card:hover .link-badge {
     padding: 0.85rem 1.1rem;
   }
 }
-</style>
+  </style>
 </head>
 <body>
   <div class="controls-wrapper">
@@ -471,9 +470,9 @@ a.book-card:hover .link-badge {
         <div class="filter-meta-group">
           <label class="toggle-label" for="only-links-checkbox">
             <input id="only-links-checkbox" class="toggle-checkbox" type="checkbox">
-            僅顯示有介紹連結的書籍
+            僅顯示有影片或文字介紹的書籍
           </label>
-          <span id="stats-summary" class="stats-summary" aria-live="polite">載入中...</span>
+          <span id="stats-summary" class="stats-summary" aria-live="polite">讀取中...</span>
         </div>
       </div>
 
@@ -494,7 +493,7 @@ a.book-card:hover .link-badge {
   <script>
 
 const SPREADSHEET_ID = '12zw_Tm9rmINLc6dT9lll9TvsJXzu95TxymGQz9bRYUw';
-const SHEET_NAME = 'SALE-LIST';
+const SHEET_NAME = 'SALE-LIST-2nd-ver';
 const CATEGORY_NAV_ROWS = 2;
 
 const dynamicCoverCache = new Map();
@@ -570,7 +569,7 @@ async function fetchSheetData() {
     }
     const text = await response.text();
     return parseGvizResponseText(text);
-  } catch (err) {
+  } catch {
     return fetchViaJsonp();
   }
 }
@@ -608,7 +607,7 @@ function cleanQueryTitle(title) {
 }
 
 async function fetchFallbackCover(title) {
-  const lower = title.trim().toLowerCase();
+  const lower = title.toLowerCase();
   if (dynamicCoverCache.has(lower)) {
     return dynamicCoverCache.get(lower);
   }
@@ -647,6 +646,7 @@ function parseRowsToCategories(gvizData) {
     const colB = getCellValue(row, 1);
     const colC = getCellValue(row, 2);
     const colD = getCellValue(row, 3);
+    const colE = getCellValue(row, 4);
 
     if (index === 0 && (colA === '類別' || colB === '書名')) {
       return;
@@ -670,11 +670,12 @@ function parseRowsToCategories(gvizData) {
     }
 
     if (colB) {
-      const sheetCover = normalizeUrl(colD);
-      const cachedCover = dynamicCoverCache.get(colB.trim().toLowerCase()) || '';
+      const sheetCover = normalizeUrl(colE);
+      const cachedCover = dynamicCoverCache.get(colB.toLowerCase()) || '';
       categoryMap.get(currentCategoryName).books.push({
         title: colB,
-        url: normalizeUrl(colC),
+        textUrl: normalizeUrl(colC),
+        videoUrl: normalizeUrl(colD),
         coverUrl: sheetCover || cachedCover,
       });
     }
@@ -683,28 +684,24 @@ function parseRowsToCategories(gvizData) {
   return categories;
 }
 
-function getFilteredCategories() {
-  const query = state.searchQuery.trim().toLowerCase();
+function hasAnyLink(book) {
+  return Boolean(book.textUrl || book.videoUrl);
+}
 
+function filterBooks(cat) {
+  const query = state.searchQuery.trim().toLowerCase();
+  const categoryMatchesQuery = query && cat.name.toLowerCase().includes(query);
+  return cat.books.filter((book) => {
+    if (state.onlyWithLinks && !hasAnyLink(book)) return false;
+    if (!query || categoryMatchesQuery) return true;
+    return book.title.toLowerCase().includes(query);
+  });
+}
+
+function getFilteredCategories() {
   return state.categories
     .filter((cat) => state.activeCategory === 'ALL' || cat.name === state.activeCategory)
-    .map((cat) => {
-      const categoryMatchesQuery = query && cat.name.toLowerCase().includes(query);
-      const filteredBooks = cat.books.filter((book) => {
-        if (state.onlyWithLinks && !book.url) {
-          return false;
-        }
-        if (!query || categoryMatchesQuery) {
-          return true;
-        }
-        return book.title.toLowerCase().includes(query);
-      });
-
-      return {
-        name: cat.name,
-        books: filteredBooks,
-      };
-    })
+    .map((cat) => ({ name: cat.name, books: filterBooks(cat) }))
     .filter((cat) => cat.books.length > 0);
 }
 
@@ -712,15 +709,7 @@ function renderCategoryNav() {
   const nav = elements.categoryNav;
   nav.textContent = '';
 
-  const query = state.searchQuery.trim().toLowerCase();
-  const countBookMatch = (cat) => {
-    const categoryMatchesQuery = query && cat.name.toLowerCase().includes(query);
-    return cat.books.filter((book) => {
-      if (state.onlyWithLinks && !book.url) return false;
-      if (!query || categoryMatchesQuery) return true;
-      return book.title.toLowerCase().includes(query);
-    }).length;
-  };
+  const countBookMatch = (cat) => filterBooks(cat).length;
 
   const totalCount = state.categories.reduce((sum, cat) => sum + countBookMatch(cat), 0);
   const tabs = [createCategoryTab('ALL', '全部類別', totalCount)];
@@ -773,7 +762,7 @@ function renderBooks() {
   const filteredCategories = getFilteredCategories();
   const totalBooksShown = filteredCategories.reduce((sum, cat) => sum + cat.books.length, 0);
   const totalWithLinksShown = filteredCategories.reduce(
-    (sum, cat) => sum + cat.books.filter((b) => Boolean(b.url)).length,
+    (sum, cat) => sum + cat.books.filter(hasAnyLink).length,
     0
   );
 
@@ -823,7 +812,7 @@ function renderBooks() {
     titleEl.appendChild(marker);
     titleEl.appendChild(titleText);
 
-    const linkedCount = cat.books.filter((b) => Boolean(b.url)).length;
+    const linkedCount = cat.books.filter(hasAnyLink).length;
     const metaEl = document.createElement('span');
     metaEl.className = 'category-meta';
     metaEl.textContent = `${cat.books.length} 本書・${linkedCount} 篇介紹`;
@@ -885,15 +874,19 @@ function attachCoverImage(coverWrap, url, title) {
   coverWrap.appendChild(img);
 }
 
-function createBookCard(book) {
-  const card = book.url ? document.createElement('a') : document.createElement('div');
-  card.className = 'book-card';
+function createLinkBadge(label, url) {
+  const badge = document.createElement('a');
+  badge.className = 'link-badge';
+  badge.href = url;
+  badge.target = '_blank';
+  badge.rel = 'noopener noreferrer';
+  badge.textContent = `${label} ↗`;
+  return badge;
+}
 
-  if (book.url) {
-    card.href = book.url;
-    card.target = '_blank';
-    card.rel = 'noopener noreferrer';
-  }
+function createBookCard(book) {
+  const card = document.createElement('div');
+  card.className = `book-card${hasAnyLink(book) ? ' has-link' : ''}`;
 
   const coverWrap = document.createElement('div');
   coverWrap.className = 'book-cover-wrap';
@@ -922,30 +915,19 @@ function createBookCard(book) {
 
   card.appendChild(infoDiv);
 
-  if (book.url) {
-    const badge = document.createElement('span');
-    badge.className = 'link-badge';
-    badge.textContent = '閱讀介紹 ↗';
-    card.appendChild(badge);
-  } else {
-    const noLink = document.createElement('span');
-    noLink.className = 'no-link-badge';
-    noLink.textContent = '尚無連結';
-    card.appendChild(noLink);
+  if (hasAnyLink(book)) {
+    const badgeGroup = document.createElement('div');
+    badgeGroup.className = 'link-badge-group';
+    if (book.videoUrl) {
+      badgeGroup.appendChild(createLinkBadge('影片介紹', book.videoUrl));
+    }
+    if (book.textUrl) {
+      badgeGroup.appendChild(createLinkBadge('文字介紹', book.textUrl));
+    }
+    card.appendChild(badgeGroup);
   }
 
   return card;
-}
-
-function renderLoading() {
-  elements.statsSummary.textContent = '讀取中...';
-  elements.contentArea.innerHTML = `
-    <div class="status-box" role="status">
-      <div class="spinner" aria-hidden="true"></div>
-      <p class="status-title">正在讀取書單資料...</p>
-      <p class="status-desc">正從線上書單同步最新分類與書籍連結</p>
-    </div>
-  `;
 }
 
 function renderError(message) {
@@ -969,18 +951,9 @@ function renderError(message) {
 }
 
 async function init() {
-  renderLoading();
   try {
     const rawData = await fetchSheetData();
     state.categories = parseRowsToCategories(rawData);
-
-    if (
-      state.activeCategory !== 'ALL' &&
-      !state.categories.some((cat) => cat.name === state.activeCategory)
-    ) {
-      state.activeCategory = 'ALL';
-    }
-
     renderCategoryNav();
     renderBooks();
   } catch (err) {
@@ -1028,6 +1001,6 @@ if (document.readyState === 'loading') {
 } else {
   bootstrap();
 }
-</script>
+  </script>
 </body>
 </html>
