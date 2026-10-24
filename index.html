@@ -43,7 +43,6 @@
       min-height: 100vh;
     }
 
-    /* Controls Bar */
     .controls-wrapper {
       position: sticky;
       top: 0;
@@ -69,7 +68,6 @@
       gap: 0.85rem 1.25rem;
     }
 
-    /* 試算表 A1/B1 提供的外部連結按鈕：加寬並強化視覺，使其更醒目 */
     .sheet-link-btn {
       position: relative;
       display: inline-flex;
@@ -94,14 +92,12 @@
       transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
     }
 
-    /* 右側箭頭，提示會開新視窗 */
     .sheet-link-btn::after {
       content: '↗';
       font-size: 1.05em;
       transition: transform 0.15s ease;
     }
 
-    /* 斜向光澤掃過效果 */
     .sheet-link-btn::before {
       content: '';
       position: absolute;
@@ -198,7 +194,6 @@
       border-radius: 999px;
     }
 
-    /* Category Tabs */
     .category-nav {
       display: flex;
       flex-direction: column;
@@ -254,7 +249,6 @@
       color: #ffffff;
     }
 
-    /* Main Content */
     .main-container {
       max-width: 1120px;
       margin: 0 auto;
@@ -414,7 +408,6 @@
       color: #ffffff;
     }
 
-    /* Status & Empty States */
     .status-box {
       background-color: var(--bg-surface);
       border: 1px solid var(--border-subtle);
@@ -515,22 +508,6 @@
   </main>
 
   <script>
-    /**
-     * Google Sheet 設定
-     * 請確保該 Google Sheet 已開啟「知道連結的任何人都能檢視」權限。
-     *
-     * 試算表版面：
-     * - Row 1：A1 為按鈕文字、B1 為按鈕網址（B1 有網址時，於頁面上方控制列左側顯示按鈕）
-     * - Row 3：標題列（類別、書名、文字介紹、影片介紹、封面網址）
-     * - Row 4 起：書籍資料
-     *
-     * 欄位對應：
-     * - Column A：分類（空白時自動沿用上一列分類）
-     * - Column B：書名
-     * - Column C：文字介紹連結
-     * - Column D：影片介紹連結
-     * - Column E：書籍封面圖片網址（空白時自動查詢 Open Library 作為備援）
-     */
     const SPREADSHEET_ID = '12zw_Tm9rmINLc6dT9lll9TvsJXzu95TxymGQz9bRYUw';
     const SHEET_NAME = 'SALE-LIST-2nd-ver';
     const CATEGORY_NAV_ROWS = 1;
