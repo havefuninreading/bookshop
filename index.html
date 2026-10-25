@@ -487,7 +487,7 @@
         <div class="filter-meta-group">
           <label class="toggle-label" for="only-links-checkbox">
             <input id="only-links-checkbox" class="toggle-checkbox" type="checkbox">
-            僅顯示有影片或文字介紹的書籍
+            僅顯示有影片或圖文介紹的書籍
           </label>
           <span id="stats-summary" class="stats-summary" aria-live="polite">讀取中...</span>
         </div>
@@ -765,7 +765,7 @@
           createStatusBox(
             'status-box',
             '找不到符合條件的書籍',
-            '請嘗試取消「僅顯示有影片或文字介紹的書籍」或切換其他分類。'
+            '請嘗試取消「僅顯示有影片或圖文介紹的書籍」或切換其他分類。'
           )
         );
         return;
@@ -851,7 +851,7 @@
         const badgeGroup = el('div', 'link-badge-group');
         [
           ['影片介紹', book.videoUrl],
-          ['文字介紹', book.textUrl],
+          ['圖文介紹', book.textUrl],
         ].forEach(([label, url]) => url && badgeGroup.appendChild(createLinkBadge(label, url)));
         card.appendChild(badgeGroup);
       }
